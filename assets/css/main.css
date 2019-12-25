@@ -1,0 +1,61 @@
+@import './global-emails-app.css';
+@import './emails-app.css';
+
+/* helpers */
+.fill{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.main-nav{
+    min-height: 50px;
+    min-width: 100%;
+    background-color: rgb(255, 145, 0);
+}
+
+.ul-main-nav{
+    list-style: none;
+    display: flex;
+    margin: 10px;
+
+}
+
+.flex{
+    display: flex;
+}
+
+.aling-flex-end{
+    align-items: flex-end;
+    
+}
+
+.   {
+    align-items: center;
+    
+}
+.content {
+    justify-content: center;
+}
+
+
+.direction-column{
+    flex-direction: column;
+
+}
+
+
