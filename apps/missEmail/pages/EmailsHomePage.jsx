@@ -1,7 +1,7 @@
 import emailsService from '../services/emailsService.js';
 import EmailDetails from '../cmps/EmailDetails.jsx';
 import EmailsList from '../cmps/EmailsList.jsx';
-// import NavBar from ''
+import EmailNavBar from '../cmps/EmailNavBar.jsx' 
 
 export default class EmailsHomePage extends React.Component {
     state = {
@@ -34,12 +34,12 @@ export default class EmailsHomePage extends React.Component {
     onUnSelectEmail = () => { this.onSelectEmail(null) }
 
     render() {
-        return <div className="emails-container">
-                    {/* <NavBar></NavBar> */}
-            { this.state.selectedEmail ? 
-            <EmailDetails email={this.state.selectedEmail} onUnSelectEmail={this.onUnSelectEmail} /> :
-            <EmailsList emails={this.state.emails} onSelectEmail={this.onSelectEmail} />
-    }
+        return <div className="emails-container flex">
+            <EmailNavBar></EmailNavBar>
+            {this.state.selectedEmail ?
+                <EmailDetails email={this.state.selectedEmail} onUnSelectEmail={this.onUnSelectEmail} /> :
+                <EmailsList emails={this.state.emails} onSelectEmail={this.onSelectEmail} />
+            }
         </div>
     }
 }

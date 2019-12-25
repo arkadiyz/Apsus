@@ -31,7 +31,6 @@ export default class SelectedEmailPage extends React.Component {
         this.props.history.push('/emailshomepage')
     }
 
-
     //TO DO LAODING MAKE BETTER CSS
 
     render() {

@@ -1,8 +1,8 @@
 import NavBar from './cmps/NavBar.jsx'
 import Home from './pages/Home.jsx'
-import EmailsHomePage from './emails/pages/EmailsHomePage.jsx'
-import Notes from './notes/App.jsx'
-import SelectedEmailPage from './emails/pages/SelectedEmailPage.jsx'
+import EmailsHomePage from './missEmail/pages/EmailsHomePage.jsx'
+import SelectedEmailPage from './missEmail/pages/SelectedEmailPage.jsx'
+// // import Notes from './notes.jsx'
 
 const AppRouter = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
