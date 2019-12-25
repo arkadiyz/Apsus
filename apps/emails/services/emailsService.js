@@ -10,9 +10,7 @@ let gEmails =[]
 
 addMail()
 
-function getEmails() {
-    return gEmails
-}
+
 
 function addMail() {
     debugger

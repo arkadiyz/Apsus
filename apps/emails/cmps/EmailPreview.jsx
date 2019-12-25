@@ -1,5 +1,4 @@
 // const { Link } = ReactRouterDOM
-import emailsService from '../services/booksService.js';
 
 export default class EmailPreview extends React.Component {
 
