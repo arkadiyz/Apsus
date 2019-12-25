@@ -10,10 +10,12 @@ export default class EmailHomePage extends React.Component {
     }
 
     componentDidMount = () => {
+        debugger
         this.loadEmails();
     }
 
     loadEmails = () => {
+        debugger
         emailsService.getEmails().then(emails => {
             this.setState({ emails })
         })

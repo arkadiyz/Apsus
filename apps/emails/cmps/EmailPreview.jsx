@@ -13,7 +13,7 @@ export default class EmailPreview extends React.Component {
             // <Link to={`/books/${book.id}`}>
             <li className="emails-list-card flex column">
                 <p className="subject">{email.subject}</p>
-                <p className="sendAt">{book.sendAt}</p>
+                <p className="sendAt">{email.sentAt}</p>
             </li>
             // </Link>
             )
