@@ -1,21 +1,23 @@
-// const { Link } = ReactRouterDOM
-import emailsService from '../services/booksService.js';
+
+// import emailsService from '../services/emailsService.js';
+const { Link } = ReactRouterDOM
+
 
 export default class EmailPreview extends React.Component {
 
-    // handleClick = () => {
-    //     this.props.onSelectBook(this.props.book);
-    // }
+    handleClick = () => {
+        this.props.onSelectEmail(this.props.email);
+    }
 
     render() {
         const { email } = this.props;
         return (
-            // <Link to={`/books/${book.id}`}>
-            <li className="emails-list-card flex column">
+            <Link to={`/emailshomepage/${email.id}`}>
+            <li className="emails-list-card flex column" onClick={this.handleClick} >
                 <p className="subject">{email.subject}</p>
                 <p className="sendAt">{email.sentAt}</p>
             </li>
-            // </Link>
+            </Link>
             )
         }
     }

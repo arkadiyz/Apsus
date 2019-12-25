@@ -1,0 +1,40 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: fantasy;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: .3s color, .3s background;
+}
+
+button {
+    transition: .3s color, .3s background, .3s opacity;
+}

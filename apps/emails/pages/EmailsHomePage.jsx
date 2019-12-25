@@ -1,8 +1,9 @@
 import emailsService from '../services/emailsService.js';
-// import EmailDetails from '../cmps/EmailDetails.jsx';
+import EmailDetails from '../cmps/EmailDetails.jsx';
 import EmailsList from '../cmps/EmailsList.jsx';
+// import NavBar from ''
 
-export default class EmailHomePage extends React.Component {
+export default class EmailsHomePage extends React.Component {
     state = {
         emails: [],
         selectedEmail: null,
@@ -10,12 +11,10 @@ export default class EmailHomePage extends React.Component {
     }
 
     componentDidMount = () => {
-        debugger
         this.loadEmails();
     }
 
     loadEmails = () => {
-        debugger
         emailsService.getEmails().then(emails => {
             this.setState({ emails })
         })
@@ -28,20 +27,23 @@ export default class EmailHomePage extends React.Component {
     //     );
     // }
 
-    // onSelectEmail = (email) => {
-    //     this.setState(() => ({ selectedEmail: Email }));
-    // }
+    onSelectEmail = (email) => {
+        this.setState(() => ({ selectedEmail: email }));
+    }
 
-    // onUnSelectEmail = () => { this.onSelectEmail(null) }
+    onUnSelectEmail = () => { this.onSelectEmail(null) }
 
     render() {
         return <div className="emails-container">
-            <EmailsList emails={this.state.emails} />
+                    {/* <NavBar></NavBar> */}
+            { this.state.selectedEmail ? 
+            <EmailDetails email={this.state.selectedEmail} onUnSelectEmail={this.onUnSelectEmail} /> :
+            <EmailsList emails={this.state.emails} onSelectEmail={this.onSelectEmail} />
+    }
         </div>
     }
 }
 
-// onSelectEmail={this.onSelectEmail}
         // onFilter={this.onFilter} 
         // {/* {this.state.selectedBook ? */}
         //   {/* // <EmailsDetails email={this.state.selectedEmail} onUnSelectEmail={this.onUnSelectEmail} /> : */}

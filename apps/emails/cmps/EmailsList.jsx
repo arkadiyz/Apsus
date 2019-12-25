@@ -7,12 +7,11 @@ export default class EmailsList extends React.Component {
         return (
             <div className="Emails-list-wrapper">
                 <ul className="Emails-list clean-list">
-                    {this.props.emails.map((email, index) => <EmailPreview email={email} key={index} />)}
+                    {this.props.emails.map((email, index) => <EmailPreview email={email} key={index}
+                    onSelectEmail={this.props.onSelectEmail} />)}
                 </ul>
             </div>
         );
     }
 
 }
-
-// onSelectEmail={this.props.onSelectEmail}
