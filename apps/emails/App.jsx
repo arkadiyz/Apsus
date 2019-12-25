@@ -1,10 +1,10 @@
-import Home from './pages/Home.jsx'
+import EmailHomePage from './pages/EmailHomePage.jsx'
 class App extends React.Component {
 
     render() {
         return (
             <main>
-                <Home />
+                <EmailHomePage />
             </main>
         )
     }
