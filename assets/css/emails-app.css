@@ -1,4 +1,39 @@
-.emails-list-wrapper{
+.emails-list-wrapper {
     width: 100%;
 }
 
+.email-card {
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 240, 0.445);
+    /* padding:5px 30px; */
+    /* padding-top: 5px; */
+    /* padding-bottom: 5px; */
+}
+
+.email-card a{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.email-nav-container{
+    height: 100vh;
+    width: 200px;
+    border: 1px solid;
+    background-color: rgba(230, 230, 250, 0.966);
+}
+
+.compose-plus-btn{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding:5px;
+    margin-right: 3px;
+}
+
+.deleteMail-btn{
+    cursor: pointer;
+    width: 5%;
+    text-align: center;
+}

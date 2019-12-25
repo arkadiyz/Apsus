@@ -2,7 +2,24 @@
 @import './emails-app.css';
 @import './notes-app.css';
 
+.main-nav{
+    padding: 5px 20px;
+    display: flex;
+    background-color: rgb(255, 145, 0);
+}
+
+.ul-main-nav{
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* helpers */
+
 .fill{
     width: 100%;
 }
@@ -15,14 +32,10 @@
     flex-direction: column;
 }
 
-.justify-center{
-    justify-content: center;
+.space-around{
+    justify-content: space-around;
 }
 
-.align-center{
-    align-items: center;
-    
-}
 .space-between{
     justify-content: space-between;
 }
@@ -34,11 +47,8 @@
     background-color: rgb(255, 145, 0);
 }
 
-.ul-main-nav{
-    list-style: none;
-    display: flex;
-    margin: 10px;
-
+.align-center{
+    align-items: center;
 }
 
 
@@ -48,10 +58,7 @@
     
 }
 
-.align-items-center{
-    align-items: center;
-    
-}
+
 .content {
     justify-content: center;
 }
@@ -62,4 +69,20 @@
 
 }
 
+
+/* cancel scroll */
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+/* Helpers */
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.clean-list li {
+    margin: 0;
+    padding: 0;
+}
 
