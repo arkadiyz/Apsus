@@ -1,0 +1,37 @@
+.main-nav{
+    min-height: 50px;
+    min-width: 100%;
+    background-color: rgb(255, 145, 0);
+}
+
+.ul-main-nav{
+    list-style: none;
+    display: flex;
+    margin: 10px;
+
+}
+
+.flex{
+    display: flex;
+}
+
+.aling-flex-end{
+    align-items: flex-end;
+    
+}
+
+.   {
+    align-items: center;
+    
+}
+.content {
+    justify-content: center;
+}
+
+
+.direction-column{
+    flex-direction: column;
+
+}
+
+
