@@ -2,7 +2,8 @@ import Email from './Email.js'
 
 export default {
     getEmails,
-    getEmailById
+    getEmailById,
+    deleteMail
 };
 
 
@@ -26,6 +27,11 @@ function getEmails(filterBy) {
     // const emails = (!filterBy) ? [...gEmails] :
     // gEmails.filter(email => email.title.includes(filterBy.name) && email.listPrice.amount <= filterBy.price);
     return Promise.resolve(gEmails);
+}
+
+function deleteMail(mail){
+    debugger
+    gEmails = gEmails.filter(gMail => gMail.id !== mail.id)
 }
 
 function getEmailById(emailId) {

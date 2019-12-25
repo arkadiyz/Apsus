@@ -1,7 +1,24 @@
 @import './global-emails-app.css';
 @import './emails-app.css';
 
+.main-nav{
+    padding: 5px 20px;
+    display: flex;
+    background-color: rgb(255, 145, 0);
+}
+
+.ul-main-nav{
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* helpers */
+
 .fill{
     width: 100%;
 }
@@ -14,25 +31,20 @@
     flex-direction: column;
 }
 
+.space-around{
+    justify-content: space-around;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
 .justify-center{
     justify-content: center;
 }
 
 .align-center{
     align-items: center;
-}
-
-.main-nav{
-    min-height: 50px;
-    min-width: 100%;
-    background-color: rgb(255, 145, 0);
-}
-
-.ul-main-nav{
-    list-style: none;
-    display: flex;
-    margin: 10px;
-
 }
 
 .flex{
@@ -44,7 +56,7 @@
     
 }
 
-.   {
+.align-center   {
     align-items: center;
     
 }
@@ -58,4 +70,20 @@
 
 }
 
+
+/* cancel scroll */
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+/* Helpers */
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.clean-list li {
+    margin: 0;
+    padding: 0;
+}
 
