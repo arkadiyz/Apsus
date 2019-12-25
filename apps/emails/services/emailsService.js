@@ -10,11 +10,6 @@ let gEmails = []
 
 addMail()
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1ebbdc63429f84ff242d4ba079aee7f84b4c8a0b
 function addMail() {
     gEmails = [...gEmails, new Email('Wassap', 'Pick up!', false, '22/02/2019')]
     gEmails = [...gEmails, new Email('Wassap', 'Pick up!', false, '25/02/2019')]

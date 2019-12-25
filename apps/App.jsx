@@ -1,7 +1,9 @@
 import NavBar from './cmps/NavBar.jsx'
 import Home from './pages/Home.jsx'
-import Emails from './emails/pages/EmailHomePage.jsx'
+import EmailsHomePage from './emails/pages/EmailsHomePage.jsx'
 import Notes from './notes/App.jsx'
+import SelectedEmailPage from './emails/pages/SelectedEmailPage.jsx'
+
 const AppRouter = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 const { createBrowserHistory } = History
@@ -16,12 +18,13 @@ class App extends React.Component {
                     <NavBar></NavBar>
                     <Switch>
                         <Route component={Home} path="/" exact></Route>
-                        <Route component={Emails} path="/emailshomepage/" exact></Route>
-                        <Route component={Notes} path="/notes" exact></Route>
+                        <Route component={EmailsHomePage} path="/emailshomepage" exact></Route>
+                        <Route component={SelectedEmailPage} path="/emailshomepage/:id" exact></Route>
+                    
+                        {/* <Route component={Notes} path="/notes" exact></Route> */}
+                        {/* <Route component={SelectedEmailPage} path="/emailshomepage/:id" exact></Route>     */}
                     </Switch>
                 </AppRouter>
-
-
             </main>
         )
     }

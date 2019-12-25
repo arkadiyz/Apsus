@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 
 // import emailsService from '../services/emailsService.js';
 const { Link } = ReactRouterDOM
-
-=======
-// const { Link } = ReactRouterDOM
->>>>>>> 1ebbdc63429f84ff242d4ba079aee7f84b4c8a0b
 
 export default class EmailPreview extends React.Component {
 
