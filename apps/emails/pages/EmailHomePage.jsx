@@ -14,7 +14,10 @@ export default class EmailHomePage extends React.Component {
     }
 
     loadEmails = () => {
+        debugger
         emailsService.getEmails().then(emails => {
+            console.log('loadEmails ',emails);
+            
             this.setState({ emails })
         })
     }
