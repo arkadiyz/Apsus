@@ -6,7 +6,7 @@ export default function NavBar() {
             <ul className ="ul-main-nav  flex aling-flex-end direction-column">
                 <li ><NavLink activeClassName="active" to='/' exact>Home</NavLink></li>
                 <li ><NavLink activeClassName="active" to='/emailshomepage'>Email</NavLink></li>
-                <li ><NavLink activeClassName="active" to='/Nodes'>Nodes</NavLink></li>
+                <li ><NavLink activeClassName="active" to='/noteshomepage'>Notes</NavLink></li>
                 <li ><NavLink activeClassName="active" to='/about' xact>About</NavLink></li>
             </ul>
             <InputSearch></InputSearch>

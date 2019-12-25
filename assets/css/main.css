@@ -1,5 +1,6 @@
 @import './global-emails-app.css';
 @import './emails-app.css';
+@import './notes-app.css';
 
 /* helpers */
 .fill{
@@ -20,7 +21,12 @@
 
 .align-center{
     align-items: center;
+    
 }
+.space-between{
+    justify-content: space-between;
+}
+
 
 .main-nav{
     min-height: 50px;
@@ -35,16 +41,14 @@
 
 }
 
-.flex{
-    display: flex;
-}
+
 
 .aling-flex-end{
     align-items: flex-end;
     
 }
 
-.   {
+.align-items-center{
     align-items: center;
     
 }
