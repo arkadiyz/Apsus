@@ -1,9 +1,9 @@
 
 import {getRandomID} from './utils.js'
-export default class Email {
-    constructor(type, txt, ) {
+export default class Note {
+    constructor(type, input, ) {
             this.id = getRandomID(),
             this.type = type, 
-            this.txt = txt
+            this.input = input
     }
 }
