@@ -1,12 +1,13 @@
 import NotesNavBar from '../cmps/NotesNavBar.jsx'
-import NotesService from '../services/NotesService.js'
 import NotesList from '../cmps/NotesList.jsx'
-import NoteTxt from '../cmps/NoteTxt.jsx'
+import NotesService from '../services/NotesService.js'
+
+// import NoteTxt from '../cmps/NoteTxt.jsx'
 export default class NotesHomePage extends React.Component {
     state = {
         notes: [],
         selectedNote: null,
-        // filterBy: null
+
     }
 
     componentDidMount = () => {
@@ -31,16 +32,25 @@ export default class NotesHomePage extends React.Component {
         this.setState(() => ({ selectedNote: note }));
     }
 
+    onAddNewNotes =(note)=>{
+        console.log('addNewNotes in NotesHomePage');
+
+        NotesService.addNote(note.type,note.input).then(() => {
+            this.loadNotes();            
+        }
+            )
+             
+    }
+
     onUnSelectNote = () => { this.onSelectNote(null) }
 
     render() {
         return <div>
-            <NotesNavBar></NotesNavBar>
+            <NotesNavBar  notes={this.state.notes}  onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
             {/* <NoteTxt></NoteTxt> */}
      
                 <NotesList notes={this.state.notes}  />
         </div>
     }
 }
-// onSelectEmail={this.onSelectEmail}
-{/* <EmailDetails email={this.state.selectedEmail} onUnSelectEmail={this.onUnSelectEmail} /> : */ }
+

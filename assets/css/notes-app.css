@@ -14,11 +14,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .continer-notes{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+
 .nav-bar-input{
     width: 250px;
 }
