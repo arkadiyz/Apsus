@@ -1,13 +1,15 @@
 import emailsService from '../services/emailsService.js';
-import EmailDetails from '../cmps/EmailDetails.jsx';
+// import EmailDetails from '../cmps/EmailDetails.jsx';
+import ComposeEmail from '../cmps/ComposeEmail.jsx';
 import EmailsList from '../cmps/EmailsList.jsx';
-import EmailNavBar from '../cmps/EmailNavBar.jsx'
+import EmailNavBar from '../cmps/EmailNavBar.jsx';
+
 
 export default class EmailsHomePage extends React.Component {
     state = {
         emails: [],
         selectedEmail: null,
-        // filterBy: null
+        navState: 'onInbox',
     }
 
     componentDidMount = () => {
@@ -18,6 +20,10 @@ export default class EmailsHomePage extends React.Component {
         emailsService.getEmails().then(emails => {
             this.setState({ emails })
         })
+    }
+
+    onSetNavState = (navState) => {
+        this.setState({ navState })
     }
 
     // onFilter = (filter) => {
@@ -44,10 +50,19 @@ export default class EmailsHomePage extends React.Component {
 
     render() {
         return <div className="emails-container flex">
-            <EmailNavBar email={this.state.selectedEmail} onSelectEmail={this.onSelectEmail}></EmailNavBar>
-            {this.state.selectedEmail ?
-                <EmailDetails email={this.state.selectedEmail} onUnSelectEmail={this.onUnSelectEmail} /> :
-                <EmailsList deleteMail={this.onDeleteMail} emails={this.state.emails} onSelectEmail={this.onSelectEmail} />
+            <EmailNavBar navState={this.state.navState}
+                onSetNavState={this.onSetNavState}
+                email={this.state.selectedEmail}
+                onSelectEmail={this.onSelectEmail} />
+
+            {
+                (this.state.navState === 'compose') ?
+                    <ComposeEmail /> :
+                    <EmailsList selectedEmail={this.state.selectedEmail}
+                        deleteMail={this.onDeleteMail}
+                        emails={this.state.emails}
+                        onSelectEmail={this.onSelectEmail}
+                        onUnSelectEmail={this.onUnSelectEmail} />
             }
         </div>
     }

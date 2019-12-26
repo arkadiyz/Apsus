@@ -40,33 +40,21 @@
     justify-content: space-between;
 }
 
-
-.main-nav{
-    min-height: 50px;
-    min-width: 100%;
-    background-color: rgb(255, 145, 0);
+.justify-center{
+    justify-content: center;
 }
-
 .align-center{
     align-items: center;
 }
-
-
-
 .aling-flex-end{
     align-items: flex-end;
     
 }
-
-
 .content {
     justify-content: center;
 }
-
-
 .direction-column{
     flex-direction: column;
-
 }
 
 

@@ -1,39 +1,142 @@
-.emails-list-wrapper {
+/* Email page nav */
+.flex{
+    display: flex;
+}
+
+.email-nav-container {
+    height: 100vh;
+    padding-top: 10px;
+    width: 200px;
+    background: #000000bf;
+}
+
+.emails-nav-container-options { 
+    color: aliceblue;
+    text-align: center;
     width: 100%;
 }
 
-.email-card {
+.styleForEmailsNavBar {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #f0f8ff47;
+    box-shadow: 0 0 8px rgba(192, 192, 192, 0.2);
+}
+
+.compose-btn {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 240, 0.445);
-    /* padding:5px 30px; */
-    /* padding-top: 5px; */
-    /* padding-bottom: 5px; */
+    padding: 15px;
+    border-radius: 60px;
+    border-width: 0;
+    color: aliceblue;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    background: #2c2525;
 }
 
-.email-card a{
-    padding-right: 20px;
-    padding-left: 20px;
+.compose-btn:hover {
+    box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
+    color: rgba(248, 183, 86, 0.774);
 }
 
-.email-nav-container{
-    height: 100vh;
-    width: 200px;
-    border: 1px solid;
-    background-color: rgba(230, 230, 250, 0.966);
-}
-
-.compose-plus-btn{
+.compose-btn-plus {
     margin-top: 5px;
     margin-bottom: 5px;
     border: 1px solid;
-    border-radius: 20px;
-    padding:5px;
+    border-radius: 100%;
+    padding: 3px 8px;
+    margin-right: 10px;
+}
+
+p.emails-nav-option {
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 0px;
+}
+
+/* EMAILS */
+.emails-container{
+    background: #000000bf;
+
+}
+
+.emails-list-wrapper {
+    background: #00000091;
+    padding-right: 2px;
+}
+
+
+.email-card {
+    background: #ffffffe0;
+    border: 1px solid;
+    border-radius: 4px;
+    transition: .02s all linear;
+    cursor: pointer;
+}
+
+.email-card:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    color: rgba(221, 148, 38, 0.952);
+}
+
+
+.user-data {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.deleteMail-btn {
+    cursor: pointer;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* OPEN - EMAIL*/
+
+.email-wrapper {
+    margin-top: 2px;
+    border-radius: 10px;
     margin-right: 3px;
 }
 
-.deleteMail-btn{
+.email-go-back-btn {
+    border-width: 0;
+    border-radius: 10px;
+    position: relative;
+    top: 7px;
+    left: 10px;
+    padding: 5px 10px;
     cursor: pointer;
-    width: 5%;
-    text-align: center;
+    box-shadow: 0 0 8px rgba(2, 2, 2, 0.849);
+}
+.user-info-header{
+    margin: 5px auto;
+    width: 90%;
+}
+
+.email-bodyText{
+    padding-bottom: 20px;
+}
+
+.email-bodyText-text{
+    width: 95%;
+    margin: 0px auto;
+    height: 40%;
+    background: #ffffff75;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.email-container {
+    box-sizing: border-box;
+    background: #ffffffeb;
+    border-width: 0;
+    border-radius: 15px;
+    /* height: 100%; */
 }

@@ -1,7 +1,7 @@
 
 import emailsService from '../services/emailsService.js';
 
-const { Link } = ReactRouterDOM
+// const { Link } = ReactRouterDOM
 
 
 export default class EmailPreview extends React.Component {
@@ -12,9 +12,7 @@ export default class EmailPreview extends React.Component {
 
 
 
-    onDeleteMail = (event) => {
-        debugger
-        // event.stopPropagation()
+    onDeleteMail = () => {
         this.props.onDeleteEmail(this.props.email)
     }
 
@@ -22,13 +20,16 @@ export default class EmailPreview extends React.Component {
         const { email } = this.props;
         return (
             <div className="email-card fill flex space-around">
-                <li className="fill" onClick={this.handleClick} >
-                    <Link className="link fill flex space-between" to={`/emailshomepage/${email.id}`}>
-                        <p className="subject">{email.subject}</p>
-                        <p className="sendAt">{email.sentAt}</p>
-                    </Link>
-                </li>
-                <p className="deleteMail-btn" onClick={this.onDeleteMail}>X</p>
+                <div className="user-data fill" onClick={this.handleClick} >
+                    {/* <Link className="link fill flex space-between" to={`/emailshomepage/${email.id}`}> */}
+                    <p className="userame">{email.name}</p>
+                    <p className="subject">{email.subject}</p>
+                    <p className="sendAt">{email.sentAt}</p>
+                    {/* </Link> */}
+                </div>
+                <div className="deleteMail-btn flex align-center justify-center">
+                    <i className="fas fa-trash" onClick={this.onDeleteMail}></i>
+                </div>
             </div>
         )
     }

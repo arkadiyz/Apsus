@@ -1,10 +1,11 @@
 import {getRandomID} from './utils.js'
 
 export default class Email {
-    constructor(subject, bodyText, isRead, sentAt) {
+    constructor(name,subject, bodyText, isRead, sentAt ,email) {
             this.id = getRandomID(),
             // username hard coded !!
-            this.username = 'dani', 
+            this.name = name, 
+            this.email = email, 
             this.subject = subject,
             this.bodyText = bodyText,
             this.isRead = isRead,
