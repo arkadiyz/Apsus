@@ -1,6 +1,15 @@
 
 
 export default class EmailDetails extends React.Component {
+
+    
+    componentDidMount = () => {
+        if(this.props.email.isRead) return
+        this.props.email.isRead = true;
+        this.props.updateUnreaded(-1)
+        this.props.onSetPage('Email opened')
+    }
+
     render() {
         const { email } = this.props;
         return <div className="email-wrapper">

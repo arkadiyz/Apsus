@@ -1,26 +1,54 @@
 /* Email page nav */
-.flex{
+
+
+main {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .email-nav-container {
-    height: 100vh;
     padding-top: 10px;
-    width: 200px;
     background: #000000bf;
+    flex: 0 0 200px;
 }
 
-.emails-nav-container-options { 
+.emails-nav-container-options {
     color: aliceblue;
-    text-align: center;
     width: 100%;
+    line-height: 20px;
+    padding-top: 5px;
 }
+
+.emails-nav-option {
+    padding: 5px 15px;
+    /* border-bottom: 1px solid; */
+    cursor: pointer;
+    border: 1px solid #ffffff26;
+    transition: 0.5s;
+}
+.emails-nav-option:hover {
+    box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
+    color: rgba(248, 183, 86, 0.774);
+    text-shadow: 5px 7px 6px black,
+    3px 3px 2px black,
+    5px 5px 7px rgba(0, 0, 0, 0.5);
+    background: #f0f8ff83;
+}
+
+.unreaded {
+    color: rgba(255, 0, 0, 0.74);
+}
+
 
 .styleForEmailsNavBar {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background: #f0f8ff47;
     box-shadow: 0 0 8px rgba(192, 192, 192, 0.2);
+    margin-right: 3px;
+    /* border-bottom: 1px solid; */
 }
 
 .compose-btn {
@@ -39,6 +67,9 @@
 .compose-btn:hover {
     box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
     color: rgba(248, 183, 86, 0.774);
+    text-shadow: 5px 7px 6px black,
+    3px 3px 2px black,
+    5px 5px 7px rgba(0, 0, 0, 0.5);
 }
 
 .compose-btn-plus {
@@ -50,23 +81,33 @@
     margin-right: 10px;
 }
 
-p.emails-nav-option {
-    cursor: pointer;
-    margin: 0;
-    padding: 5px 0px;
+.emails-nav-proccess{
+    text-shadow:  -5px -4px 10px rgb(255, 204, 65),
+     -10px 3px 15px rgb(255, 174, 0),
+     12px 10px 10px rgb(255, 186, 74);
+    color: aliceblue;
+    padding-top: 20px;
+    font-size: 1.2rem;
 }
 
 /* EMAILS */
-.emails-container{
+.emails-container {
     background: #000000bf;
-
+    flex: 1;
+    overflow: hidden;
 }
 
 .emails-list-wrapper {
     background: #00000091;
-    padding-right: 2px;
+    padding-right: 10px;
+    margin: 5px;
+    overflow-y: auto;
+    flex: 1;
 }
 
+.readedStyle {
+    opacity: 0.8;
+}
 
 .email-card {
     background: #ffffffe0;
@@ -74,13 +115,13 @@ p.emails-nav-option {
     border-radius: 4px;
     transition: .02s all linear;
     cursor: pointer;
+    padding: 5px 0px;
 }
 
 .email-card:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
     color: rgba(221, 148, 38, 0.952);
 }
-
 
 .user-data {
     display: flex;
@@ -89,12 +130,18 @@ p.emails-nav-option {
     padding-right: 20px;
 }
 
+.email-card-btns {
+    width: 70px;
+    justify-content: space-evenly;
+}
+
 .deleteMail-btn {
     cursor: pointer;
     width: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 /* OPEN - EMAIL*/
@@ -103,9 +150,11 @@ p.emails-nav-option {
     margin-top: 2px;
     border-radius: 10px;
     margin-right: 3px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .email-go-back-btn {
+    background: rgba(0, 0, 0, 0.37);
     border-width: 0;
     border-radius: 10px;
     position: relative;
@@ -113,18 +162,22 @@ p.emails-nav-option {
     left: 10px;
     padding: 5px 10px;
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(2, 2, 2, 0.849);
 }
-.user-info-header{
+
+.user-info-header {
     margin: 5px auto;
     width: 90%;
 }
 
-.email-bodyText{
+.usesr-info {
+    padding-top: 10px;
+}
+
+.email-bodyText {
     padding-bottom: 20px;
 }
 
-.email-bodyText-text{
+.email-bodyText-text {
     width: 95%;
     margin: 0px auto;
     height: 40%;
@@ -139,4 +192,42 @@ p.emails-nav-option {
     border-width: 0;
     border-radius: 15px;
     /* height: 100%; */
+}
+
+
+/* COMPOSE MAIL */
+
+.send-email-container-wrapper {
+    /* overflow-y: auto; */
+    background: #ffffffe8;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.send-email-container {
+    padding: 20px;
+    margin: 5px;
+    background: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* SENTER MAIS */
+.sent-mails-container-wrapper {
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+}
+
+.sent-mail-container {
+    background: aliceblue;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.sent-mail-bodyText {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
 }
