@@ -7,3 +7,7 @@ export function getRandomID() {
     }
     return id;
 }
+
+export function urlForVideo(url) {
+    return url.replace('watch?v=', 'embed/')
+}
