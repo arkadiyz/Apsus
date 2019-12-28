@@ -19,19 +19,41 @@ export default class DynamicComponent extends React.Component {
 
     setComponent = (type) => {
         console.log(type);
-        debugger
+        
         this.setState({ componentName: type })
     }
 
+    onDeleteNote = (newInput,id) => {
+        console.log('DynamicComponent func Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
+        console.log(this.props);
+        this.props.onDeleteNote(newInput,id)
 
+    }
+
+    changeInput = (newInput,id) => {
+        
+        // console.log('New Input in DynamicComponen ',newInput);
+        this.props.onChange(newInput,id)
+
+        
+        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
+    }
+
+        
+    onChangeColor = (backgroundColor,id) => { 
+
+        this.props.onChangeColor(backgroundColor,id)
+    }
+    
     render() {
         const { note } = this.props;
-        debugger
+        
         // this.setComponent(note.type)
         const Cmp = this.getComponent(note.type);
 
         return <React.Fragment   >
-            <Cmp name={note.type} note = {note}></Cmp>
+            <Cmp name={note.type} note = {note} onChange={this.changeInput} 
+            onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}></Cmp>
 
         </React.Fragment>
     }

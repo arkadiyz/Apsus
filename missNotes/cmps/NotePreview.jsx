@@ -1,31 +1,47 @@
 // import emailsService from '../services/emailsService.js';
-import NoteTxt from './Dynamics/NoteTxt'
+// import NoteTxt from './Dynamics/NoteTxt'
 import DynamicComponent from './Dynamics/DynamicComponent.jsx'
-const { Link } = ReactRouterDOM
+// const { Link } = ReactRouterDOM
 
 
 export default class NotePreview extends React.Component {
 
-    handleClick = () => {
-        this.props.onSelectNote(this.props.note);
+
+    onDeleteNote = (id) => {
+        console.log('NotePreview func Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
+        this.props.onDeleteNote(id)
+
+    }
+    changeInput = (newInput,id) => {
         
+        // console.log('New Input in NotePreview ',newInput);
+        this.props.onChange(newInput,id)
+
         
+        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
+    }
+        
+    onChangeColor = (backgroundColor,id) => { 
+
+        this.props.onChangeColor(backgroundColor,id)
     }
 
     render() {
         const { note } = this.props;
-        debugger
+        console.log("CHECK COLOR ",note);
+        
+debugger
         return (
-            <Link className="notes-txt" to={`/noteshomepage/${note.id}`}>
-            <div className="note-list-card " onClick={this.handleClick} >
-            <DynamicComponent note ={note}></DynamicComponent>
+
+            <div className="note-list-card "  >
+                <DynamicComponent note={note} onChange={this.changeInput} 
+                onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}></DynamicComponent>
                 {/* <NoteTxt note={note}></NoteTxt> */}
 
             </div>
-            </Link>
-            )
-        }
+        )
     }
-    
+}
+
 
 
