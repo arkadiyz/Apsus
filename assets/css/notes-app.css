@@ -48,7 +48,9 @@ body {
     border-radius: 4px;
     break-inside: avoid;
     resize: none;
+    scroll-padding-bottom: initial;
 }
+
 
 
 .nav-bar-input {
@@ -73,7 +75,11 @@ body {
 ul {
     margin: 0;
 }
-
+.todo{
+    break-inside: avoid;
+    resize: none;
+    
+}
 .border-notes{
     width: 100%;
     
@@ -95,4 +101,10 @@ ul {
     display: flex;
     justify-content: center;
     
+}
+
+
+
+.done{
+    text-decoration: line-through;
 }

@@ -44,6 +44,20 @@ export default class DynamicComponent extends React.Component {
 
         this.props.onChangeColor(backgroundColor,id)
     }
+
+    addTodo=(id,todos)=>{
+        console.log('DynamicComponent addTodo');
+        this.props.addTodo(id,todos)
+
+    }
+
+    selectTodo = (noteId,todoId) => { 
+        console.log('DynamicComponent selectTodo',this.props);
+
+        this.props.selectTodo(noteId,todoId)
+
+        
+    }
     
     render() {
         const { note } = this.props;
@@ -53,7 +67,8 @@ export default class DynamicComponent extends React.Component {
 
         return <React.Fragment   >
             <Cmp name={note.type} note = {note} onChange={this.changeInput} 
-            onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}></Cmp>
+            onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}
+             addTodo={this.addTodo} selectTodo={this.selectTodo}></Cmp>
 
         </React.Fragment>
     }

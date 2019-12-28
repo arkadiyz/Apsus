@@ -10,7 +10,7 @@ export default class NotesNavBar extends React.Component {
     setType = (type) => {
         // this.setState({ type: 'text' })
         console.log('placenolder', type);
-        
+        debugger
         
         switch (type) {
             case 'text':
@@ -30,6 +30,11 @@ export default class NotesNavBar extends React.Component {
                 this.setState({ placeholder: 'Please enter audio ' })
                 
                 break;
+
+                case 'todos':
+                    this.setState({ placeholder: 'Please enter first todos  ' })
+                    
+                    break;
             default:
                 break;
         }
@@ -58,6 +63,8 @@ export default class NotesNavBar extends React.Component {
             <span onClick={() => this.setType('img')} className="add-notes-btn" >🖼️</span>
             <span onClick={() => this.setType('video')} className="add-notes-btn">🎥</span>
             <span onClick={() => this.setType('audio')} className="add-notes-btn" >🔊</span>
+            <span onClick={() => this.setType('todos')} className="add-notes-btn" >📋</span>
+            
             <span className="add-notes-btn" onClick={this.onAddNewNotes}>Add Note</span>
         </div>
     }

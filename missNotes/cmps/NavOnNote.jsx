@@ -30,6 +30,7 @@ export default class NavOnNote extends React.Component {
             <span className="save-btn btn">✔️</span>,
             <span className="color-btn btn">🎨</span>,
             <input type="color" className ="color" onChange={this.onChangeColor} />
+            
         ]
     }
 }

@@ -3,7 +3,6 @@ import NotesList from '../cmps/NotesList.jsx'
 import NotesService from '../services/NotesService.js'
 
 
-// import NoteTxt from '../cmps/NoteTxt.jsx'
 export default class NotesHomePage extends React.Component {
     state = {
         notes: [],
@@ -35,7 +34,6 @@ export default class NotesHomePage extends React.Component {
             this.loadNotes();
         }
         )
-
     }
 
     onDeleteNote = (id) => {
@@ -43,8 +41,6 @@ export default class NotesHomePage extends React.Component {
         NotesService.deleteNote(id).then((isTrue) => {
             console.log(isTrue);
             this.loadNotes();
-
-
         })
     }
     changeInput = (newInput,id) => {
@@ -52,37 +48,51 @@ export default class NotesHomePage extends React.Component {
         // console.log('New Input in DynamicComponen ',newInput);
         this.props.onChange(newInput,id)
         this.setState()
-
-        
-        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
     }
 
     changeInput = (newInput,id) => {
         
         console.log('New Input in NotesHomePage ',newInput);
-        // this.props.onChange(newInput,id)
 
         NotesService.editNoteTxt(newInput,id)
-        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
     }
 
-    // onUnSelectNote = () => { this.onSelectNote(null) }
+
     
     onChangeColor = (backgroundColor,id) => { 
 
-        // this.props.onChangeColor(backgroundColor,id)
         NotesService.setColorNote(backgroundColor,id).then(()=>{
             this.loadNotes()
         })
 
     }
 
+    addTodo=(id,todos)=>{
+        console.log('NotesHomePage addTodo');
+        
+        NotesService.addTodo(id,todos).then(()=>{
+            this.loadNotes()
+        })
+        
+    }
+
+    selectTodo = (noteId,todoId) => { 
+        console.log('NotesHomePage selectTodo',this.props);
+
+        NotesService.changeSelected(noteId,todoId).then(()=>{
+            this.loadNotes()
+            
+        })        
+    }
+
+
     render() {
+        
         return <React.Fragment>
             <NotesNavBar notes={this.state.notes} onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
 
             <NotesList notes={this.state.notes}  onChange={this.changeInput} onChangeColor={this.onChangeColor} 
-             onDeleteNote={this.onDeleteNote} />
+             onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo}/>
         </React.Fragment>
     }
 }
