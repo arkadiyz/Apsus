@@ -2,6 +2,13 @@
 
 export default class NavOnNote extends React.Component {
 
+
+componentDidMount(){
+    console.log(this.props.note.id,'11111');
+    
+}
+
+
     onDeleteNote = (id) => {
         console.log('NavOnNote Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
         console.log(this.props);
@@ -13,17 +20,19 @@ export default class NavOnNote extends React.Component {
 
     }
 
-    onChangeColor = (ev) => { 
+    onChangeColor = (id, ev) => { 
         const backgroundColor = ev.target.value
+        
+        console.log('2222222222',id, ev );
+        
         this.props.onChangeColor(backgroundColor,this.props.note.id)
         
-        console.log(' func for chang color ',backgroundColor);
         
 
     }
     pinNote =()=>{
         console.log('NavOnNote');
-        debugger
+        
         this.props.pinNote(this.props.note.id)
     }
 
@@ -34,8 +43,8 @@ export default class NavOnNote extends React.Component {
             <span className="delete-btn btn " onClick={this.onDeleteNote}>🗑️</span>,
             <span onClick={this.pinNote} className="pin-btn btn">📌</span>,
             // <span className="save-btn btn">✔️</span>,
-            <label className="color-btn btn" htmlFor="colorInput">🎨</label>,
-            <input type="color" id="colorInput" className ="color" onChange={this.onChangeColor} />
+            <label className="color-btn btn"  htmlFor="colorInput">🎨</label>,
+            <input type="color" id="colorInput" className ="color" onChange={()=>this.onChangeColor(this.props.note.id, event)} />
             
         ]
     }

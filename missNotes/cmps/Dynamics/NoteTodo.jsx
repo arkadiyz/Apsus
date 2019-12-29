@@ -10,19 +10,19 @@ export default class NoteTodo extends React.Component {
 
     addTodo = () => {
         console.log('NoteTodo addTodo');
-        this.props.addTodo(this.props.note.id,'' )
+        this.props.addTodo(this.props.note.id, '')
 
     }
 
 
-    selectTodo = (noteId,todoId) => { 
-        console.log('NoteTodo selectTodo',this.props);
+    selectTodo = (noteId, todoId) => {
+        console.log('NoteTodo selectTodo', this.props);
 
-        console.log('noteId,todoId',noteId,todoId);
-        debugger
-        this.props.selectTodo(noteId,todoId)
+        console.log('noteId,todoId', noteId, todoId);
 
-        
+        this.props.selectTodo(noteId, todoId)
+
+
     }
 
     onDeleteNote = () => {
@@ -31,32 +31,34 @@ export default class NoteTodo extends React.Component {
         this.props.onDeleteNote(this.props.note.id)
 
     }
-    onChangeColor = (backgroundColor,id) => { 
+    // onChangeColor = (backgroundColor, id) => {
+    //     console.log('###', backgroundColor, id);
+    //     console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 
-        this.props.onChangeColor(backgroundColor,id)
-    }
-    
-    changeInputTodo = (input,noteId,todoId) => {
-        
-        this.props.changeInputTodo(input,noteId,todoId);
+    //     this.props.onChangeColor(backgroundColor, id)
+    // }
+
+    changeInputTodo = (input, noteId, todoId) => {
+
+        this.props.changeInputTodo(input, noteId, todoId);
         // this.setState({ input: ev.target.value })
 
     }
 
-    pinNote =(noteId)=>{
-        console.log('NotesHomePage',noteId);
-        
+    pinNote = (noteId) => {
+        console.log('NotesHomePage', noteId);
+
         this.props.pinNote(noteId)
-        
+
     }
 
-    
+
 
     render() {
         // const { note } = this.props;
         const { note } = this.props;
-        console.log('const { note }',note);
-        
+        console.log('const { note }', note);
+
         return (
             <div className="border-notes" >
 
@@ -65,12 +67,12 @@ export default class NoteTodo extends React.Component {
                     <ul className=" list-todos ">
                         {note.todos.map((todo, index) => {
                             return <Todo className="btn " noteId={note.id} todo={todo}
-                            changeInputTodo={this.changeInputTodo} selectTodo={this.selectTodo} key={index}></Todo>
+                                changeInputTodo={this.changeInputTodo} selectTodo={this.selectTodo} key={index}></Todo>
                         })}
                     </ul>
                 </div>
                 <div className="container-note-txt-btn">
-                    <NavOnNote note={note} onDeleteNote={this.onDeleteNote} pinNote={this.pinNote} onChangeColor={this.onChangeColor}></NavOnNote>
+                    <NavOnNote note={note} onDeleteNote={this.onDeleteNote} pinNote={this.pinNote} onChangeColor={this.props.onChangeColor}></NavOnNote>
                     <span className="add-btn btn" onClick={this.addTodo}>➕</span>
                 </div>
 

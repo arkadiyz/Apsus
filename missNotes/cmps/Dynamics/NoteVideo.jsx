@@ -23,9 +23,6 @@ export default class NoteVideo extends React.Component {
         const { note } = this.props;
         // this.props.note.type
         const url = urlForVideo(note.input)
-        
-        console.log('input note video ', url);
-debugger
 
 
         return (

@@ -74,7 +74,7 @@ export default class NotesNavBar extends React.Component {
             <span className={txtSelctClass} onClick={() => this.setType('text')}  >TXT</span>
             <span className={imgSelctClass} onClick={() => this.setType('img')}  >🖼️</span>
             <span className={videoSelctClass} onClick={() => this.setType('video')}>🎥</span>
-            <span className={audioSelctClass} onClick={() => this.setType('audio')}  >🔊</span>
+            {/* <span className={audioSelctClass} onClick={() => this.setType('audio')}  >🔊</span> */}
             <span className={todosSelctClass} onClick={() => this.setType('todos')}  >📋</span>
 
             <span className="add-notes-btn" onClick={this.onAddNewNotes}>Add Note</span>

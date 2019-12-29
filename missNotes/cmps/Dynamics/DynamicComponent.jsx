@@ -40,6 +40,7 @@ export default class DynamicComponent extends React.Component {
 
         
     onChangeColor = (backgroundColor,id) => { 
+console.log('!!!', backgroundColor, id)
 
         this.props.onChangeColor(backgroundColor,id)
     }

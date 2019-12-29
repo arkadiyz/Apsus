@@ -23,7 +23,7 @@ addData();
 function addData() {
 
     if (storageService.load('gNotes') === 'undefined' || storageService.load('gNotes') === null) {
-        addNote('text', 'משמרות לבשועה הבא חמישי שישי שבת לילה ').then(() => {
+        addNote('text', 'משמרות לבשוע הבא חמישי שישי שבת לילה ').then(() => {
         })
 
         addNote('img', 'https://www.pitria.com/wp-content/uploads/2015/12/%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA-%D7%9E%D7%93%D7%94%D7%99%D7%9E%D7%95%D7%AA-2015-%D7%A4%D7%9C%D7%99%D7%A7%D7%A8-8.jpg ')
@@ -32,7 +32,7 @@ function addData() {
         addNote('img', 'https://images1.calcalist.co.il/PicServer3/2019/09/15/934981/1P.jpg').then(() => {
             console.log("gNotes".gNotes);
         })
-        addNote('todos', 'משימוש היום').then(() => {
+        addNote('todos', 'TODO').then(() => {
 
 
 
@@ -65,9 +65,21 @@ function addNote(type, text) {
 
 function getNotes(filterBy) {
 
-
-    gNotes = storageService.load('gNotes')
-    return Promise.resolve(gNotes);
+    
+    if (filterBy){ 
+        var notesFilter = gNotes.filter(note => {
+            console.log("note.input",note.input);
+            console.log("notesFilter",notesFilter);
+            console.log("filterBy",filterBy);
+            
+            return note.input.includes(filterBy.name) });
+            console.log("notesFilter",notesFilter);
+    
+    return Promise.resolve(notesFilter)
+}else{
+        gNotes = storageService.load('gNotes')
+        return Promise.resolve(gNotes);
+    }
 }
 
 function getNoteById(noteId) {
@@ -97,14 +109,18 @@ function deleteNote(noteId) {
     })
 }
 function setColorNote(color, id) {
+    console.log('id',id);
+
+
     return getNoteById(id).then((currNote) => {
         currNote.backgroundColor = color
-        gNotes = gNotes.map(tmpNote => tmpNote.id === currNote.id ? currNote : tmpNote)
-
-        storageService.store('gNotes', gNotes)
+        gNotes = gNotes.map(tmpNote => (tmpNote.id === currNote.id) ? currNote : tmpNote)
+        console.log('currNote.id',currNote.id);
+        
+        storageService.store('gNotes',gNotes)
+        console.log('gNotes',gNotes);
 
         return Promise.resolve(true)
-
     })
 }
 function editNoteTxt(newInput, id) {
@@ -151,7 +167,7 @@ console.log('noteId, todoId',noteId, todoId);
 
 function changeSelected(noteId, todoId) {
     console.log('noteId, todoId',noteId, todoId);
-    debugger
+    
     return getTodoById(noteId, todoId).then((todo) => {
         todo.isSelected = !todo.isSelected
 
@@ -191,16 +207,16 @@ function changeInputTodo(input, noteId, todoId) {
 }
 
 function changeLocationNotes(noteId) {
-    debugger
+    
     return getIndexNoteById(noteId).then((indexNode)=>{
-        debugger
+        
         console.log('1  ',gNotes);
         var currNote = gNotes.splice(indexNode,1)
         console.log('2 ',gNotes);
-        debugger
+        
         gNotes.unshift(currNote[0]);
         console.log('3v',gNotes);
-        debugger
+        
         storageService.store('gNotes', gNotes)
     })
 }

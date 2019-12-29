@@ -1,10 +1,14 @@
-
-*{
-    padding :0;
+* {
+    padding: 0;
     margin: 0;
+    
 }
+
+
+
 body {
     background-color: #000000;
+    overflow-x: hidden;
 }
 
 .nav-bar-notes {
@@ -17,20 +21,24 @@ body {
 }
 
 .node-img {
-     width: 100%;
+    width: 100%;
     /* height: 500px;  */
     padding: 10px;
     border-style: groove;
     background-color: rgb(212, 149, 14);
     border-radius: 5px;
 }
-.color-btn{
-    order:0;
+
+.color-btn {
+    order: 0;
 }
 
-.color{
-position: fixed;
-top: -999%;
+.color {
+    position: fixed;
+    top: -999%;
+}
+h2{
+    text-align: center;
 }
 
 .continer-notes {
@@ -38,106 +46,100 @@ top: -999%;
     height: 100%;
     column-count: 3;
     padding: 1%;
-
 }
 
-
 .notes-txt {
-    /* width: 100%; */
     max-height: 250px;
+    min-height: 100px;
     background-color: rgb(255, 145, 0);
     border-radius: 4px;
     break-inside: avoid;
     resize: none;
     scroll-padding-bottom: initial;
-    overflow-y:scroll ;
+    overflow-y: scroll;
 }
-
-
 
 .nav-bar-input {
     width: 250px;
     border-style: none;
-    
-
 }
 
 .add-notes-btn {
     cursor: pointer;
-    
 }
 
-.btn{
+.btn {
     cursor: pointer;
 }
 
 .note-list-card {
     list-style-type: none;
-    
 }
 
 ul {
     margin: 0;
 }
-.todo{
+
+.todo {
     break-inside: avoid;
     resize: none;
-    
 }
-.border-notes{
-        
+
+.border-notes {
     border-style: groove;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius:7px ;
+    border-radius: 5px;
     break-inside: avoid;
     resize: none;
-    margin: 1px;
-
+    
+    padding: 5px;
+    margin: 5px;
 }
 
-.container-txt-node{
+.container-txt-node {
     break-inside: avoid;
     resize: none;
 }
-.container-note-txt-btn{
+
+.container-note-txt-btn {
     display: flex;
     justify-content: center;
-    
 }
 
-.list-todos{
-    margin-left: 20px ;
+.list-todos {
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-} 
-.space-between{
+}
+
+.space-between {
     justify-content: space-between;
 }
 
-.itemOnNav{
+.itemOnNav {
     width: 22px;
     height: 25px;
     border-bottom-style: groove;
-    border-bottom-color:rgb(255, 136, 0) ;
+    border-bottom-color: rgb(255, 136, 0);
 }
-.todo-controller{
+
+.todo-controller {
     display: flex;
     list-style-type: none;
     margin-right: 10px;
     justify-content: space-between;
     border-style: groove;
     background-color: rgb(255, 127, 7);
-
 }
-.done{
 
+.done {
     text-decoration: line-through;
 }
-.todo-line{
-    
+
+.todo-line {
     width: 100%;
     break-inside: avoid;
     resize: none;
@@ -164,3 +166,100 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
     border: none;
 } */
+
+@media screen and (max-width:750px) {
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+    .notes-txt {
+        max-height: 150px;
+        min-height: 150px;
+        background-color: rgb(255, 145, 0);
+        border-radius: 4px;
+        break-inside: avoid;
+        resize: none;
+        scroll-padding-bottom: initial;
+        overflow-y: scroll;
+    }
+    .nav-bar-input {
+        width: 150px;
+        border-style: none;
+    }
+    .nav-bar-notes {
+        width: 370px;
+        height: 30px;
+        background-color: rgb(112, 111, 111);
+        padding: 3px;
+        margin: 15px auto;
+        background-color: #fff;
+    }
+    .continer-notes {
+        width: 100%;
+        height: 100%;
+        column-count: 2;
+        padding: 1%;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .notes-txt {
+        max-height: 100px;
+        min-height: 70px;
+        background-color: rgb(255, 145, 0);
+        border-radius: 4px;
+        break-inside: avoid;
+        resize: none;
+        scroll-padding-bottom: initial;
+        overflow-y: scroll;
+    }
+    .nav-bar-input {
+        width: 100px;
+        border-style: none;
+    }
+    .nav-bar-notes {
+        width: 270px;
+        height: 30px;
+        background-color: rgb(112, 111, 111);
+        padding: 3px;
+        margin: 15px auto;
+        background-color: #fff;
+    }
+    .continer-notes {
+        width: 100%;
+        height: 100%;
+        column-count: 1;
+        padding: 1%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .notes-txt {
+        max-height: 100px;
+        min-height: 70px;
+        background-color: rgb(255, 145, 0);
+        border-radius: 4px;
+        break-inside: avoid;
+        resize: none;
+        scroll-padding-bottom: initial;
+        overflow-y: scroll;
+    }
+    .nav-bar-input {
+        width: 100px;
+        border-style: none;
+    }
+    .nav-bar-notes {
+        width: 270px;
+        height: 30px;
+        background-color: rgb(112, 111, 111);
+        padding: 3px;
+        margin: 15px auto;
+        background-color: #fff;
+    }
+    .continer-notes {
+        width: 100%;
+        height: 100%;
+        column-count: 1;
+        padding: 1%;
+    }
+}

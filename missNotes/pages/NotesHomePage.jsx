@@ -16,7 +16,9 @@ export default class NotesHomePage extends React.Component {
     }
 
     loadNotes = () => {
-        NotesService.getNotes().then(notes => {
+        console.log('this.state.filterBy',this.state.filterBy);
+        
+        NotesService.getNotes(this.state.filterBy).then(notes => {
             
             this.setState({ notes })
         })
@@ -76,7 +78,7 @@ export default class NotesHomePage extends React.Component {
 
     selectTodo = (noteId,todoId) => { 
         console.log('noteId, todoId',noteId, todoId);
-        debugger
+        
         NotesService.changeSelected(noteId,todoId).then(()=>{
             this.loadNotes()
             
@@ -86,13 +88,12 @@ export default class NotesHomePage extends React.Component {
     changeInputTodo = (input,noteId,todoId) => {
         
         NotesService.changeInputTodo(input,noteId,todoId).then(()=>{
-            this.loadNotes()  
+            this.loadNotes()
         })
     }
 
     pinNote =(noteId)=>{
-        console.log('Home111 NotesHomePage');
-        debugger
+        
         NotesService.changeLocationNotes(noteId).then(()=>{
             this.loadNotes()
         })
@@ -103,14 +104,16 @@ export default class NotesHomePage extends React.Component {
         console.log(ev.target.value);
         const field = ev.target.name;
         const value = ev.target.value 
-        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }))
+        console.log('value',value);
+        
+        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.loadNotes)
         
     }
     render() {
         
         return <React.Fragment>
             <NotesNavBar notes={this.state.notes} onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
-            {/* <input className="nav-bar-notes" type="text" onChange ={this.searchNotes}placeholder="Search"></input> */}
+            <input name="name" className="nav-bar-notes" type="text" onChange ={this.searchNotes}placeholder="Search"></input>
 
             <NotesList notes={this.state.notes}  onChange={this.changeInput} onChangeColor={this.onChangeColor} 
              onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo} 

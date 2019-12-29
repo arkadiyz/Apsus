@@ -8,7 +8,7 @@ export default class InputSearch extends React.Component {
     };
 
     handleInput = (event) => {
-        debugger
+        
         let field = event.target.name,
             value;
 

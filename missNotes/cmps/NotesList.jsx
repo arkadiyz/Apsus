@@ -8,12 +8,10 @@ export default class NotesList extends React.Component {
     }
 
     changeInput = (newInput,id) => {
+  
         
-        // console.log('New Input in NotesHomePage ',newInput);
         this.props.onChange(newInput,id)
 
-        
-        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
     }
 
         

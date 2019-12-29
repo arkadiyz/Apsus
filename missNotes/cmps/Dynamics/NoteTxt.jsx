@@ -41,6 +41,9 @@ export default class NoteTxt extends React.Component {
     render() {
         const { note } = this.props;
         // this.props.note.type
+        console.log('note',note);
+        
+        
         return (
 
             // <div className="border-notes ">

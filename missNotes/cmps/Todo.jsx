@@ -4,7 +4,7 @@ export default class NoteTodo extends React.Component {
 
     selectTodo = (ev) => {
         console.log('noteId, todoId',this.props.noteId, this.props.todo.todoId);
-        debugger
+        
         this.props.selectTodo(this.props.noteId, this.props.todo.todoId)
     }
     changeInputTodo = (ev) => {
