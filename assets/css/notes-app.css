@@ -88,6 +88,7 @@ ul {
 }
 
 .border-notes {
+    background: #5d410d5e;
     border-style: groove;
     display: flex;
     flex-direction: column;
