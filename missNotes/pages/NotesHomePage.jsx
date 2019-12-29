@@ -3,17 +3,16 @@ import NotesList from '../cmps/NotesList.jsx'
 import NotesService from '../services/NotesService.js'
 
 
-// import NoteTxt from '../cmps/NoteTxt.jsx'
 export default class NotesHomePage extends React.Component {
     state = {
         notes: [],
         selectedNote: null,
-        colorList:null
-
+        colorList:null,
+        filterBy:null
     }
 
     componentDidMount = () => {
-        this.loadNotes();
+            this.loadNotes();
     }
 
     loadNotes = () => {
@@ -29,60 +28,93 @@ export default class NotesHomePage extends React.Component {
     }
 
     onAddNewNotes = (note) => {
-        console.log('addNewNotes in NotesHomePage');
 
         NotesService.addNote(note.type, note.input).then(() => {
             this.loadNotes();
         }
         )
-
     }
 
     onDeleteNote = (id) => {
-        console.log('NotesHomePage Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
+        
         NotesService.deleteNote(id).then((isTrue) => {
             console.log(isTrue);
             this.loadNotes();
-
-
         })
+        
     }
+    
     changeInput = (newInput,id) => {
         
         // console.log('New Input in DynamicComponen ',newInput);
         this.props.onChange(newInput,id)
         this.setState()
-
-        
-        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
     }
 
     changeInput = (newInput,id) => {
-        
-        console.log('New Input in NotesHomePage ',newInput);
-        // this.props.onChange(newInput,id)
 
         NotesService.editNoteTxt(newInput,id)
-        // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
     }
 
-    // onUnSelectNote = () => { this.onSelectNote(null) }
+
     
     onChangeColor = (backgroundColor,id) => { 
 
-        // this.props.onChangeColor(backgroundColor,id)
         NotesService.setColorNote(backgroundColor,id).then(()=>{
             this.loadNotes()
         })
 
     }
 
+    addTodo=(id,todos)=>{
+        
+        NotesService.addTodo(id,todos).then(()=>{
+            this.loadNotes()
+        })
+        
+    }
+
+    selectTodo = (noteId,todoId) => { 
+        console.log('noteId, todoId',noteId, todoId);
+        debugger
+        NotesService.changeSelected(noteId,todoId).then(()=>{
+            this.loadNotes()
+            
+        })        
+    }
+
+    changeInputTodo = (input,noteId,todoId) => {
+        
+        NotesService.changeInputTodo(input,noteId,todoId).then(()=>{
+            this.loadNotes()  
+        })
+    }
+
+    pinNote =(noteId)=>{
+        console.log('Home111 NotesHomePage');
+        debugger
+        NotesService.changeLocationNotes(noteId).then(()=>{
+            this.loadNotes()
+        })
+        
+    }
+
+    searchNotes=(ev)=>{
+        console.log(ev.target.value);
+        const field = ev.target.name;
+        const value = ev.target.value 
+        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }))
+        
+    }
     render() {
+        
         return <React.Fragment>
             <NotesNavBar notes={this.state.notes} onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
+            {/* <input className="nav-bar-notes" type="text" onChange ={this.searchNotes}placeholder="Search"></input> */}
 
             <NotesList notes={this.state.notes}  onChange={this.changeInput} onChangeColor={this.onChangeColor} 
-             onDeleteNote={this.onDeleteNote} />
+             onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo} 
+             changeInputTodo={this.changeInputTodo} pinNote={this.pinNote}/>
         </React.Fragment>
     }
 }

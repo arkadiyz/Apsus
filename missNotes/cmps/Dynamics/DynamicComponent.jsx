@@ -23,11 +23,10 @@ export default class DynamicComponent extends React.Component {
         this.setState({ componentName: type })
     }
 
-    onDeleteNote = (newInput,id) => {
-        console.log('DynamicComponent func Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
+    onDeleteNote = (noteId) => {
         console.log(this.props);
-        this.props.onDeleteNote(newInput,id)
-
+        this.props.onDeleteNote(noteId)
+        
     }
 
     changeInput = (newInput,id) => {
@@ -44,16 +43,41 @@ export default class DynamicComponent extends React.Component {
 
         this.props.onChangeColor(backgroundColor,id)
     }
-    
+
+    addTodo=(id,todos)=>{
+        this.props.addTodo(id,todos)
+
+    }
+
+    selectTodo = (noteId,todoId) => { 
+
+        this.props.selectTodo(noteId,todoId)
+
+        
+    }
+
+    changeInputTodo = (input,noteId,todoId) => {
+        
+        this.props.changeInputTodo(input,noteId,todoId);
+        // this.setState({ input: ev.target.value })
+
+    }
+    pinNote =(noteId)=>{
+        console.log('DynamicComponent',noteId);
+        this.props.pinNote(noteId)
+    }
+
     render() {
         const { note } = this.props;
         
         // this.setComponent(note.type)
         const Cmp = this.getComponent(note.type);
 
-        return <React.Fragment   >
+        return <React.Fragment>
             <Cmp name={note.type} note = {note} onChange={this.changeInput} 
-            onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}></Cmp>
+            onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}
+             addTodo={this.addTodo} selectTodo={this.selectTodo}
+             pinNote={this.pinNote} changeInputTodo={this.changeInputTodo}></Cmp>
 
         </React.Fragment>
     }

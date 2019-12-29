@@ -1,4 +1,5 @@
-import {urlForVideo} from '../../services/utils.js'
+import { urlForVideo } from '../../services/utils.js'
+import NavOnNote from '../NavOnNote.jsx'
 export default class NoteVideo extends React.Component {
 
     componentDidMount = () => {
@@ -6,24 +7,39 @@ export default class NoteVideo extends React.Component {
 
     }
 
+    pinNote = (noteId) => {
+        console.log('NotesHomePage', noteId);
+
+        this.props.pinNote(noteId)
+
+    }
+
+    onChangeColor = (backgroundColor,id) => { 
+
+        this.props.onChangeColor(backgroundColor,id)
+    }
+
     render() {
         const { note } = this.props;
         // this.props.note.type
         const url = urlForVideo(note.input)
-
-        console.log('input note video ', url);
         
+        console.log('input note video ', url);
+debugger
 
 
         return (
 
-            <React.Fragment>
-               
-                    <iframe src={url} frameborder="2" ></iframe>
+            <div className ="border-notes">
+                <iframe src={url} frameBorder="2" ></iframe>
+
+                <div className="container-note-txt-btn">
+                    <NavOnNote note={note} onDeleteNote={this.onDeleteNote}
+                        pinNote={this.pinNote} onChangeColor={this.onChangeColor}></NavOnNote>
+                </div>
 
 
-             
-            </React.Fragment>
+            </div>
         )
     }
 }

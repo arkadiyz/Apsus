@@ -29,8 +29,8 @@ body {
 }
 
 .color{
-    opacity: 1;
-    z-index: 2;
+position: fixed;
+top: -999%;
 }
 
 .continer-notes {
@@ -38,21 +38,27 @@ body {
     height: 100%;
     column-count: 3;
     padding: 1%;
+
 }
 
 
 .notes-txt {
-    width: 100%;
-    height: 80px;
+    /* width: 100%; */
+    max-height: 250px;
     background-color: rgb(255, 145, 0);
     border-radius: 4px;
     break-inside: avoid;
     resize: none;
+    scroll-padding-bottom: initial;
+    overflow-y:scroll ;
 }
+
 
 
 .nav-bar-input {
     width: 250px;
+    border-style: none;
+    
 
 }
 
@@ -73,10 +79,13 @@ body {
 ul {
     margin: 0;
 }
-
-.border-notes{
-    width: 100%;
+.todo{
+    break-inside: avoid;
+    resize: none;
     
+}
+.border-notes{
+        
     border-style: groove;
     display: flex;
     flex-direction: column;
@@ -84,6 +93,7 @@ ul {
     border-radius:7px ;
     break-inside: avoid;
     resize: none;
+    margin: 1px;
 
 }
 
@@ -96,3 +106,61 @@ ul {
     justify-content: center;
     
 }
+
+.list-todos{
+    margin-left: 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+.space-between{
+    justify-content: space-between;
+}
+
+.itemOnNav{
+    width: 22px;
+    height: 25px;
+    border-bottom-style: groove;
+    border-bottom-color:rgb(255, 136, 0) ;
+}
+.todo-controller{
+    display: flex;
+    list-style-type: none;
+    margin-right: 10px;
+    justify-content: space-between;
+    border-style: groove;
+    background-color: rgb(255, 127, 7);
+
+}
+.done{
+
+    text-decoration: line-through;
+}
+.todo-line{
+    
+    width: 100%;
+    break-inside: avoid;
+    resize: none;
+    background-color: rgb(255, 127, 7);
+    scroll-padding-bottom: initial;
+    border-style: none;
+    /* overflow-y:scroll ; */
+}
+
+/* Input color */
+
+/* input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 10px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+} */

@@ -19,7 +19,7 @@ export default class NoteTxt extends React.Component {
     onDeleteNote = () => {
         console.log('Last func Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
         console.log(this.props);
-        debugger
+        
 
         this.props.onDeleteNote(this.props.note.id)
 
@@ -31,6 +31,12 @@ export default class NoteTxt extends React.Component {
 
         this.props.onChangeColor(backgroundColor,id)
     }
+    pinNote =(noteId)=>{
+        console.log('NotesHomePage',noteId);
+        
+        this.props.pinNote(noteId)
+        
+    }
 
     render() {
         const { note } = this.props;
@@ -41,7 +47,7 @@ export default class NoteTxt extends React.Component {
             <div className="border-notes">
                 <textarea className="notes-txt" onChange={this.changeInput}  style={{background: note.backgroundColor}} >{note.input}</textarea>
                 <div className="container-note-txt-btn">
-                    <NavOnNote note = {note} onDeleteNote={this.onDeleteNote} onChangeColor={this.onChangeColor}></NavOnNote>
+                    <NavOnNote note = {note} onDeleteNote={this.onDeleteNote} pinNote={this.pinNote} onChangeColor={this.onChangeColor}></NavOnNote>
                 </div>
             </div>
         )
