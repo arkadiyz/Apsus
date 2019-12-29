@@ -6,19 +6,28 @@
 .main-nav {
     padding: 5px 20px;
     display: flex;
-    background-color: rgb(255, 172, 46);
+    background-color: rgba(255, 255, 255, 0.514);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    height: 50px;
+    height: 90px;
+}
+
+.more-apps-icon{
+    display: none;
+}
+
+
+.main-nav img {
+    height: 82px;
+    background: white;
+    border: 2px solid;
+    border-radius: 100%;
+    padding: 3px;
+    box-shadow: 3 2 4px rgba(0, 0, 0, 0.24);
 }
 
 .ul-main-nav {
-    width: 30px;
     list-style: none;
-    display: flex;
-    width: 20%;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .ul-main-nav li {
@@ -26,6 +35,10 @@
 }
 
 /* helpers */
+
+.fillheight{
+    height: 100%;
+}
 
 .fill {
     width: 100%;
@@ -49,6 +62,14 @@
 
 .flex1 {
     flex-grow: 1;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
 }
 
 .wrap {

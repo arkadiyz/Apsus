@@ -72,7 +72,7 @@ export default class EmailDetails extends React.Component {
                         </div>
                     </div>
                     <div className="user-info-name-email flex fill space-between">
-                        <div>
+                        <div className="user-info-name-email-insider">
                             <p><small> from:  </small>{email.name}</p>
                             <small>({email.email}) </small>
                         </div>

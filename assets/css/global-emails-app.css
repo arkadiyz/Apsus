@@ -15,6 +15,12 @@ img {
     max-width: 100%;
 }
 
+main{
+    background-image: url('../img/bg-op-3.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 h1,
 h2,
 h3,
@@ -58,10 +64,10 @@ textarea {
 
 
 ::placeholder {
-    color: rgba(248, 183, 86, 0.774);
+    /* color: rgba(248, 183, 86, 0.774);
     text-shadow: 2px 2px 2px black,
         1px 1px 1px black,
-        1px 1px 1px rgba(0, 0, 0, 0.5);
+        1px 1px 1px rgba(0, 0, 0, 0.5); */
     font-size: 1.2rem;
 }
 

@@ -5,17 +5,24 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* overflow: hidden; */
+}
+
+.more-apps-icon {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 2px solid;
+    border-radius: 100%;
+    padding: 2px;
+    background: white;
 }
 
 .hamb-menu-nav {
     display: none;
 }
 
-.email-nav-container-wrapper {
-    flex: 0 0 200px;
+.email-nav-container {
+    width: 200px;
     padding-top: 10px;
-    background: #000000bf;
 }
 
 
@@ -23,7 +30,7 @@ main {
     color: aliceblue;
     width: 100%;
     line-height: 20px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .emails-nav-option {
@@ -132,7 +139,7 @@ select:hover,
 
 /* EMAILS */
 .emails-container {
-    background: #ffffff1f;
+    background: #000000a3;
     flex: 1;
     overflow: hidden;
 }
@@ -215,7 +222,7 @@ select:hover,
     background: #000000bf;
     margin-top: 5px;
     border-radius: 10px;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.945);
+    box-shadow: 1px -3px 1px rgba(255, 255, 255, 0.945);
 }
 
 .send-email-container-wrapper {
@@ -276,8 +283,13 @@ small {
     padding-top: 10px;
 }
 
+
 .user-info-name-email {
     padding: 10px;
+}
+
+.user-info-name-email-insider {
+    margin-right: 3px;
 }
 
 .user-info-name-email p {
@@ -569,10 +581,77 @@ small {
     margin-bottom: 10px;
 }
 
+
+    /* main nav bar hamb */
+    .more-apps-container {
+        flex-direction: column;
+        position: fixed;
+        z-index: 20;
+        width: 200px;
+        top: 90px;
+        right: -30px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        color: #f7f7f7f2;
+        background: rgba(0, 0, 0, 0.25);
+        border-left: 2px solid #ffffffde;
+        border-bottom-left-radius: 9px;
+        transform: translate(100%, 0);
+        transition: transform .3s;
+    }
+
+    .more-apps-container li {
+        height: 50px;
+        background-color: #3b3b3b;
+        border-radius: 5px;
+        border: 1px solid #ececec;
+        text-align: center;
+    }
+
+    .openMoreApps.more-apps-container {
+        transform: translate(0, 0);
+    }
+
+    .more-apps-container li:hover {
+        box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
+        color: rgba(248, 183, 86, 0.774);
+        text-shadow: 5px 7px 6px black,
+            3px 3px 2px black,
+            5px 5px 7px rgba(0, 0, 0, 0.5);
+        background: #f0f8ff83;
+    }
+
+
+
+
+
 /* media */
 
 
-@media (max-width: 800px) {
+@media (max-width: 650px) {
+
+    .emails-list-sort-filter-container {
+        justify-content: center;
+    }
+
+    .main-nav img {
+        margin-left: 40%;
+    }
+
+    .emails-nav-option {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+
+    .emails-nav-proccess {
+        padding: 10px;
+        border-bottom: 1px solid;
+        border-bottom-color: #a5a5a56b;
+    }
+
     .emails-list-sort-filter-container {
         flex-wrap: wrap;
     }
@@ -586,28 +665,34 @@ small {
     }
 
     .hamb-menu-nav {
-        display: block;
         position: absolute;
-        top: 10px;
+        top: 17px;
         left: 10px;
-        font-size: 2rem;
-        border: 1px solid;
-        padding: 2px;
-        border-radius: 5px; 
+        font-size: 2.5rem;
+        border: 2px solid;
+        padding: 5px;
+        border-radius: 5px;
         cursor: pointer;
+        background: rgba(255, 255, 255, 0.972);
+        box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.24);
     }
+
+
+    /* email - nav - hamb */
+
 
     .email-nav-container {
         flex-direction: column;
         position: fixed;
         z-index: 20;
-        right: 0;
+        left: -200px;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.794);
-        border-left: 1px solid #c3c3c3;
-        width: 270px;
+        padding-right: 5px;
+        background: rgba(0, 0, 0, 0.25);
+        border-right: 2px solid #0f0d0d57;
+        width: 200px;
         transform: translate(100%, 0);
-        transition: transform .2s;
+        transition: transform .3s;
     }
 
     .hamb-item {
@@ -623,16 +708,6 @@ small {
     .openNav.email-nav-container {
         transform: translate(0, 0);
     }
-
-    /*
-    .main-menu li:hover {
-        background-color: rgb(78, 74, 74);
-        color: snow;
-        border: 2px solid slategrey;
-    } */
-
-
-
 
 
 }
