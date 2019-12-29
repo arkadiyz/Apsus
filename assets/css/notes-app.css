@@ -5,25 +5,34 @@
 }
 
 
+main{
+background-color: #fff;
+}
+.input{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
 
 body {
-    background-color: #000000;
     overflow-x: hidden;
+    
 }
+
 
 .nav-bar-notes {
     width: 470px;
-    height: 30px;
+    height: 45px;
     background-color: rgb(112, 111, 111);
     padding: 3px;
     margin: 15px auto;
     background-color: #fff;
+    border-style: groove;
 }
+
 
 .node-img {
     width: 100%;
     /* height: 500px;  */
-    padding: 10px;
     border-style: groove;
     background-color: rgb(212, 149, 14);
     border-radius: 5px;
@@ -49,18 +58,20 @@ h2{
 }
 
 .notes-txt {
-    max-height: 250px;
-    min-height: 100px;
+    max-height: 300;
+    min-height: 150px;
     background-color: rgb(255, 145, 0);
     border-radius: 4px;
     break-inside: avoid;
     resize: none;
-    scroll-padding-bottom: initial;
+    scroll-padding-bottom: none;
+    
     overflow-y: scroll;
 }
 
 .nav-bar-input {
     width: 250px;
+    height: 100%;
     border-style: none;
 }
 
@@ -90,12 +101,10 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 0px;
     break-inside: avoid;
     resize: none;
-    
-    padding: 5px;
-    margin: 5px;
+    padding: 2px;
 }
 
 .container-txt-node {
@@ -131,8 +140,9 @@ ul {
     list-style-type: none;
     margin-right: 10px;
     justify-content: space-between;
-    border-style: groove;
-    background-color: rgb(255, 127, 7);
+    border-bottom-style:groove ;
+    /* border-style: groove; */
+    /* background-color: rgb(255, 127, 7); */
 }
 
 .done {
@@ -141,31 +151,17 @@ ul {
 
 .todo-line {
     width: 100%;
+    height: 20px;
     break-inside: avoid;
     resize: none;
-    background-color: rgb(255, 127, 7);
-    scroll-padding-bottom: initial;
+    background-color: orange;
     border-style: none;
+    
+    overflow: hidden;
     /* overflow-y:scroll ; */
 }
 
-/* Input color */
 
-/* input[type="color"] {
-    -webkit-appearance: none;
-    border: none;
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 10px;
-}
-
-input[type="color"]::-webkit-color-swatch {
-    border: none;
-} */
 
 @media screen and (max-width:750px) {
 body{
@@ -173,14 +169,14 @@ body{
     overflow-x: hidden;
 }
     .notes-txt {
-        max-height: 150px;
-        min-height: 150px;
-        background-color: rgb(255, 145, 0);
+        /* max-height: 350px; */
+        /* min-height: 150px; */
+        min-height: 750px;
+        /* background-color: rgb(255, 145, 0); */
         border-radius: 4px;
         break-inside: avoid;
         resize: none;
-        scroll-padding-bottom: initial;
-        overflow-y: scroll;
+        overflow: hidden;
     }
     .nav-bar-input {
         width: 150px;
@@ -188,6 +184,40 @@ body{
     }
     .nav-bar-notes {
         width: 370px;
+        height: 30px;
+        background-color: rgb(112, 111, 111);
+        padding: 3px;
+        margin: 15px auto;
+        background-color: #fff;
+    }
+    .continer-notes {
+        width: 100%;
+        height: 100%;
+        column-count: 2;
+        padding: 1%;
+    }
+}
+
+
+
+@media screen and (max-width:620px) {
+    .notes-txt {
+        max-height: 100px;
+        min-height: 70px;
+        
+        background-color: rgb(255, 145, 0);
+        border-radius: 4px;
+        break-inside: avoid;
+        resize: none;
+        scroll-padding-bottom: initial;
+        overflow: hidden;
+    }
+    .nav-bar-input {
+        width: 100px;
+        border-style: none;
+    }
+    .nav-bar-notes {
+        width: 270px;
         height: 30px;
         background-color: rgb(112, 111, 111);
         padding: 3px;
@@ -211,38 +241,7 @@ body{
         break-inside: avoid;
         resize: none;
         scroll-padding-bottom: initial;
-        overflow-y: scroll;
-    }
-    .nav-bar-input {
-        width: 100px;
-        border-style: none;
-    }
-    .nav-bar-notes {
-        width: 270px;
-        height: 30px;
-        background-color: rgb(112, 111, 111);
-        padding: 3px;
-        margin: 15px auto;
-        background-color: #fff;
-    }
-    .continer-notes {
-        width: 100%;
-        height: 100%;
-        column-count: 1;
-        padding: 1%;
-    }
-}
-
-@media screen and (max-width:500px) {
-    .notes-txt {
-        max-height: 100px;
-        min-height: 70px;
-        background-color: rgb(255, 145, 0);
-        border-radius: 4px;
-        break-inside: avoid;
-        resize: none;
-        scroll-padding-bottom: initial;
-        overflow-y: scroll;
+        overflow: hidden;
     }
     .nav-bar-input {
         width: 100px;

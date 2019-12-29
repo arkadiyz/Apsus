@@ -32,7 +32,7 @@ export default class DynamicComponent extends React.Component {
     changeInput = (newInput,id) => {
         
         // console.log('New Input in DynamicComponen ',newInput);
-        this.props.onChange(newInput,id)
+        this.props.changeInput(newInput,id)
 
         
         // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
@@ -75,7 +75,7 @@ console.log('!!!', backgroundColor, id)
         const Cmp = this.getComponent(note.type);
 
         return <React.Fragment>
-            <Cmp name={note.type} note = {note} onChange={this.changeInput} 
+            <Cmp name={note.type} note = {note} changeInput={this.changeInput} 
             onChangeColor={this.onChangeColor} onDeleteNote={this.onDeleteNote}
              addTodo={this.addTodo} selectTodo={this.selectTodo}
              pinNote={this.pinNote} changeInputTodo={this.changeInputTodo}></Cmp>
