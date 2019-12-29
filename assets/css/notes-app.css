@@ -73,6 +73,8 @@ h2{
     width: 250px;
     height: 100%;
     border-style: none;
+    color: black;
+    text-shadow: none;
 }
 
 .add-notes-btn {
@@ -97,6 +99,7 @@ ul {
 }
 
 .border-notes {
+    background: #5d410d5e;
     border-style: groove;
     display: flex;
     flex-direction: column;
@@ -183,6 +186,7 @@ body{
         border-style: none;
     }
     .nav-bar-notes {
+        text-shadow: none;
         width: 370px;
         height: 30px;
         background-color: rgb(112, 111, 111);
