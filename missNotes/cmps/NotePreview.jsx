@@ -8,7 +8,7 @@ export default class NotePreview extends React.Component {
 
 
     onDeleteNote = (id) => {
-        console.log('NotePreview func Delete is working!!!....🗑️🗑️🗑️🗑️🗑️🗑️');
+
         this.props.onDeleteNote(id)
 
     }
@@ -27,27 +27,36 @@ export default class NotePreview extends React.Component {
     }
 
     addTodo=(id,todos)=>{
-        console.log('NotePreview addTodo');
         this.props.addTodo(id,todos)
     }
 
     selectTodo = (noteId,todoId) => { 
-        console.log('NotePreview selectTodo',this.props);
 
         this.props.selectTodo(noteId,todoId)
+    }
+
+    changeInputTodo = (input,noteId,todoId) => {
+        
+        this.props.changeInputTodo(input,noteId,todoId);
+        // this.setState({ input: ev.target.value })
+
+    }
+    pinNote =(noteId)=>{
+        console.log('>>>NotePreview<<',noteId);
+        this.props.pinNote(noteId)        
     }
 
     render() {
         const { note } = this.props;
         console.log("CHECK COLOR ",note);
-debugger
+
         return (
 
             <div className="note-list-card "  >
                 <DynamicComponent note={note} onChange={this.changeInput} 
-                onChangeColor={this.onChangeColor} 
-                onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo}></DynamicComponent>
-                {/* <NoteTxt note={note}></NoteTxt> */}
+                onChangeColor={this.onChangeColor} changeInputTodo={this.changeInputTodo}
+                onDeleteNote={this.onDeleteNote} addTodo={this.addTodo}
+                pinNote={this.pinNote} selectTodo={this.selectTodo}></DynamicComponent>
 
             </div>
         )
