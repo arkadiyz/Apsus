@@ -19,7 +19,6 @@ export default class NoteTodo extends React.Component {
     render() {
         const todo = this.props.todo
 
-
         const classTodo = (todo.isSelected) ? "todo-line done " : "todo-line"
         const buttonDone = (todo.isSelected) ? "✖️" : "✔️"
 
@@ -27,7 +26,7 @@ export default class NoteTodo extends React.Component {
             <div className='todo-controller'>
                 <li >
                     <textarea onChange={this.changeInputTodo} className={classTodo}
-                        placeholder="Please enter new Todo">{todo.todo}
+                        placeholder="enter new Todo">{todo.todo}
 
                     </textarea>
                 </li>

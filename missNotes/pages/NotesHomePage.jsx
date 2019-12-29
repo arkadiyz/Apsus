@@ -54,7 +54,8 @@ export default class NotesHomePage extends React.Component {
     }
 
     changeInput = (newInput,id) => {
-
+        console.log(newInput);
+        
         NotesService.editNoteTxt(newInput,id)
     }
 
@@ -115,7 +116,7 @@ export default class NotesHomePage extends React.Component {
             <NotesNavBar notes={this.state.notes} onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
             <input name="name" className="nav-bar-notes" type="text" onChange ={this.searchNotes}placeholder="Search"></input>
 
-            <NotesList notes={this.state.notes}  onChange={this.changeInput} onChangeColor={this.onChangeColor} 
+            <NotesList notes={this.state.notes}  changeInput={this.changeInput} onChangeColor={this.onChangeColor} 
              onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo} 
              changeInputTodo={this.changeInputTodo} pinNote={this.pinNote}/>
         </React.Fragment>

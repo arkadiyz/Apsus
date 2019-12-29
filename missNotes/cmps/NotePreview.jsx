@@ -15,7 +15,7 @@ export default class NotePreview extends React.Component {
     changeInput = (newInput,id) => {
         
         // console.log('New Input in NotePreview ',newInput);
-        this.props.onChange(newInput,id)
+        this.props.changeInput(newInput,id)
 
         
         // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
@@ -53,7 +53,7 @@ export default class NotePreview extends React.Component {
         return (
 
             <div className="note-list-card "  >
-                <DynamicComponent note={note} onChange={this.changeInput} 
+                <DynamicComponent note={note} changeInput={this.changeInput} 
                 onChangeColor={this.onChangeColor} changeInputTodo={this.changeInputTodo}
                 onDeleteNote={this.onDeleteNote} addTodo={this.addTodo}
                 pinNote={this.pinNote} selectTodo={this.selectTodo}></DynamicComponent>

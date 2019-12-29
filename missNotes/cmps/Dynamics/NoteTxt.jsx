@@ -12,7 +12,7 @@ export default class NoteTxt extends React.Component {
         // const field = ev.target.name;
         const value = ev.target.value;
         // console.log(value);
-        this.props.onChange(value, this.props.note.id)
+        this.props.changeInput(value, this.props.note.id)
         // this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.filter)
     }
 

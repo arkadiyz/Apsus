@@ -1,6 +1,5 @@
 /* Email page nav */
 
-
 main {
     height: 100vh;
     display: flex;
@@ -25,7 +24,6 @@ main {
     padding-top: 10px;
 }
 
-
 .emails-nav-container-options {
     color: aliceblue;
     width: 100%;
@@ -45,7 +43,6 @@ main {
     color: rgba(255, 0, 0, 0.74);
 }
 
-
 .styleForEmailsNavBar {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -54,10 +51,7 @@ main {
     margin-right: 3px;
 }
 
-.compose-btn,
-.save-edit-changes,
-.send-mail-btn,
-.repliy-send-btn {
+.compose-btn, .save-edit-changes, .send-mail-btn, .repliy-send-btn {
     cursor: pointer;
     padding-left: 10px;
     padding-right: 10px;
@@ -70,14 +64,10 @@ main {
     background: #2c2525;
 }
 
-.save-edit-changes:hover,
-.compose-btn:hover,
-.send-mail-btn:hover {
+.save-edit-changes:hover, .compose-btn:hover, .send-mail-btn:hover {
     box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
     color: rgba(248, 183, 86, 0.774);
-    text-shadow: 5px 7px 6px black,
-        3px 3px 2px black,
-        5px 5px 7px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 7px 6px black, 3px 3px 2px black, 5px 5px 7px rgba(0, 0, 0, 0.5);
 }
 
 .compose-btn-plus {
@@ -90,15 +80,14 @@ main {
 }
 
 .emails-nav-proccess {
-    text-shadow: -5px -4px 10px rgb(255, 204, 65),
-        -10px 3px 15px rgb(255, 174, 0),
-        12px 10px 10px rgb(255, 186, 74);
+    text-shadow: -5px -4px 10px rgb(255, 204, 65), -10px 3px 15px rgb(255, 174, 0), 12px 10px 10px rgb(255, 186, 74);
     color: aliceblue;
     padding-top: 20px;
     font-size: 1.2rem;
 }
 
 /* SORT + FILTER */
+
 .emails-list-sort-filter-container {
     color: aliceblue;
     padding-bottom: 3px;
@@ -124,20 +113,15 @@ input {
     transition: 0.5s;
 }
 
-.emails-sort-container button:hover,
-.emails-nav-option:hover,
-select:hover,
-.email-card:hover {
+.emails-sort-container button:hover, .emails-nav-option:hover, select:hover, .email-card:hover {
     box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
     color: rgba(248, 183, 86, 0.774);
-    text-shadow: 5px 7px 6px black,
-        3px 3px 2px black,
-        5px 5px 7px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 7px 6px black, 3px 3px 2px black, 5px 5px 7px rgba(0, 0, 0, 0.5);
     background: #f0f8ff83;
 }
 
-
 /* EMAILS */
+
 .emails-container {
     background: #000000a3;
     flex: 1;
@@ -173,9 +157,7 @@ select:hover,
 .subject {
     font-size: 1.3rem;
     color: rgba(248, 183, 86, 0.774);
-    text-shadow: 2px 2px 2px black,
-        3px 3px 2px black,
-        2px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px black, 3px 3px 2px black, 2px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .user-data.subject p {
@@ -184,9 +166,7 @@ select:hover,
 }
 
 .email-card:hover {
-    text-shadow: 2px 2px 2px black,
-        3px 3px 2px black,
-        5px 5px 7px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px black, 3px 3px 2px black, 5px 5px 7px rgba(0, 0, 0, 0.5);
 }
 
 .user-data {
@@ -199,25 +179,15 @@ select:hover,
     padding-top: 5px;
 }
 
-.delete-send-mail-btn,
-.delete-repliyed-mail-btn,
-.repliy-btn:hover,
-.user-data p:hover,
-.readMail-btn:hover,
-.starredMail-btn:hover,
-.deleteMail-btn:hover {
+.delete-send-mail-btn, .delete-repliyed-mail-btn, .repliy-btn:hover, .user-data p:hover, .readMail-btn:hover, .starredMail-btn:hover, .deleteMail-btn:hover {
     transition: 0.3s;
     color: aliceblue;
-
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.76),
-        3px 3px 3px rgba(0, 0, 0, 0.76),
-        1px 1px 1px rgba(0, 0, 0, 0.76);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.76), 3px 3px 3px rgba(0, 0, 0, 0.76), 1px 1px 1px rgba(0, 0, 0, 0.76);
 }
 
 /* OPEN - EMAIL*/
 
-.email-wrapper,
-.send-email-container-wrapper {
+.email-wrapper, .send-email-container-wrapper {
     padding: 3px;
     background: #000000bf;
     margin-top: 5px;
@@ -230,10 +200,7 @@ select:hover,
     margin-top: 10px;
 }
 
-
-.email-container,
-.send-email-container,
-.sent-mail-container {
+.email-container, .send-email-container, .sent-mail-container {
     box-sizing: border-box;
     background: #ffffffa6;
     border-width: 0;
@@ -241,16 +208,11 @@ select:hover,
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
-.sent-mail-container small,
-.email-container small,
-.user-data small,
-small {
+.sent-mail-container small, .email-container small, .user-data small, small {
     color: #fffffff2;
     font-style: italic;
     font-family: cursive;
-    text-shadow: 2px 2px 2px black,
-        1px 2px 1px black,
-        1px 1px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px black, 1px 2px 1px black, 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .email-details-btns {
@@ -274,9 +236,7 @@ small {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: rgba(248, 183, 86, 0.774);
-    text-shadow: 2px 2px 2px black,
-        3px 3px 3px black,
-        1px 1px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px black, 3px 3px 3px black, 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .usesr-info {
@@ -295,18 +255,14 @@ small {
 .user-info-name-email p {
     font-size: 1.3rem;
     color: rgba(248, 183, 86, 0.774);
-    text-shadow: 2px 2px 2px black,
-        3px 3px 3px black,
-        1px 1px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px black, 3px 3px 3px black, 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
 
 .email-bodyText {
     padding-bottom: 2px;
 }
 
-.email-bodyText-text,
-.repliy-mail-body-text {
+.email-bodyText-text, .repliy-mail-body-text {
     margin: 5px;
     padding: 5px 10px;
     border-radius: 3px;
@@ -333,9 +289,7 @@ small {
     padding-bottom: 10px;
     background: #444444;
     color: rgba(248, 183, 86, 0.774);
-    text-shadow: 2px 2px 2px black,
-        3px 3px 3px black,
-        1px 1px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px black, 3px 3px 3px black, 1px 1px 1px rgba(0, 0, 0, 0.5);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -376,9 +330,7 @@ small {
     cursor: pointer;
     font-size: 2rem;
     padding: 5px 15px;
-    text-shadow: 5px 7px 6px black,
-        3px 3px 2px black,
-        5px 5px 7px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 7px 6px black, 3px 3px 2px black, 5px 5px 7px rgba(0, 0, 0, 0.5);
 }
 
 .send-mail-btn {
@@ -411,6 +363,7 @@ small {
 }
 
 /* SENT MAILS */
+
 .sent-mails-container-wrapper {
     overflow-y: auto;
 }
@@ -430,7 +383,6 @@ small {
     text-shadow: 2px 2px 2px black, 3px 3px 3px black, 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-
 .sent-mail-container:hover {
     background: rgba(255, 255, 255, 0.746);
 }
@@ -439,7 +391,6 @@ small {
     margin-top: 10px;
     padding: 0px 10px;
 }
-
 
 .sent-mail-bodyText {
     display: flex;
@@ -473,6 +424,7 @@ small {
 }
 
 /* Repliys*/
+
 .repliy-email-container-wrapper {
     margin-top: 10px;
     border: 1px solid;
@@ -505,7 +457,6 @@ small {
     transition: 0.3s;
     margin-bottom: 5px;
 }
-
 
 .repliy-send-btn:hover {
     background: #3b3b3bd1;
@@ -541,7 +492,6 @@ small {
 
 .sent-mail-text-container {
     padding: 10px;
-
 }
 
 .sent-mail-body-text {
@@ -556,7 +506,6 @@ small {
 }
 
 /* Edit */
-
 
 .edit-container {
     box-shadow: 3 2 4px rgba(255, 255, 255, 0.801);
@@ -652,14 +601,18 @@ small {
         border-bottom-color: #a5a5a56b;
     }
 
+<<<<<<< HEAD
+=======
+    .emails-list-sort-filter-container {
+        flex-wrap: wrap;
+    }
+>>>>>>> f5333bfca231cc8077e5a468db372479dc03bb8a
     .emails-sort-container {
         padding-bottom: 3px;
     }
-
     .email-card-btns {
         margin-right: 10px;
     }
-
     .hamb-menu-nav {
         position: absolute;
         top: 17px;
@@ -690,7 +643,6 @@ small {
         transform: translate(100%, 0);
         transition: transform .3s;
     }
-
     .hamb-item {
         display: block;
         width: 100%;
@@ -700,7 +652,6 @@ small {
         border: 1px solid #ececec;
         text-align: center;
     }
-
     .openNav.email-nav-container {
         transform: translate(0, 0);
     }

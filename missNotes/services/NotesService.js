@@ -23,7 +23,7 @@ addData();
 function addData() {
 
     if (storageService.load('gNotes') === 'undefined' || storageService.load('gNotes') === null) {
-        addNote('text', 'משמרות לבשוע הבא חמישי שישי שבת לילה ').then(() => {
+        addNote('text', 'call Dana at 7:00 ').then(() => {
         })
 
         addNote('img', 'https://www.pitria.com/wp-content/uploads/2015/12/%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA-%D7%9E%D7%93%D7%94%D7%99%D7%9E%D7%95%D7%AA-2015-%D7%A4%D7%9C%D7%99%D7%A7%D7%A8-8.jpg ')
@@ -32,7 +32,7 @@ function addData() {
         addNote('img', 'https://images1.calcalist.co.il/PicServer3/2019/09/15/934981/1P.jpg').then(() => {
             console.log("gNotes".gNotes);
         })
-        addNote('todos', 'TODO').then(() => {
+        addNote('todos', 'TODO').then( {
 
 
 
@@ -109,18 +109,18 @@ function deleteNote(noteId) {
     })
 }
 function setColorNote(color, id) {
-    console.log('id',id);
-
-
     return getNoteById(id).then((currNote) => {
         currNote.backgroundColor = color
         gNotes = gNotes.map(tmpNote => (tmpNote.id === currNote.id) ? currNote : tmpNote)
         console.log('currNote.id',currNote.id);
         
-        storageService.store('gNotes',gNotes)
+        storageService.store('tmpNote.id', tmpNote.id)
         console.log('gNotes',gNotes);
 
+        
+        
         return Promise.resolve(true)
+
     })
 }
 function editNoteTxt(newInput, id) {

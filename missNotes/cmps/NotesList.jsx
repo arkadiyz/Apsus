@@ -9,8 +9,8 @@ export default class NotesList extends React.Component {
 
     changeInput = (newInput,id) => {
   
-        
-        this.props.onChange(newInput,id)
+
+        this.props.changeInput(newInput,id)
 
     }
 
@@ -49,7 +49,7 @@ export default class NotesList extends React.Component {
         return (
             <div className="continer-notes" >
                 {this.props.notes.map((note, index) => <NotePreview onChange={this.changeInputTodo} note={note} key={index} 
-                onChangeColor={this.onChangeColor} changeInputTodo={this.changeInputTodo} 
+                onChangeColor={this.onChangeColor} changeInputTodo={this.changeInputTodo} changeInput={this.changeInput}
                 onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} 
                 pinNote={this.pinNote} selectTodo={this.selectTodo}/>)}
             </div>
