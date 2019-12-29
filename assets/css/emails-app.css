@@ -652,10 +652,6 @@ small {
         border-bottom-color: #a5a5a56b;
     }
 
-    .emails-list-sort-filter-container {
-        flex-wrap: wrap;
-    }
-
     .emails-sort-container {
         padding-bottom: 3px;
     }
@@ -710,4 +706,9 @@ small {
     }
 
 
+    .emails-list-sort-filter-container {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 }
