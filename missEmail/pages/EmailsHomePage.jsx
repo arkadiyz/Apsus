@@ -10,7 +10,7 @@ export default class EmailsHomePage extends React.Component {
     state = {
         emails: [],
         filterBy: null,
-        sortBy:null,
+        sortBy: 'newer',
         selectedEmail: null,
         navState: 'onInbox',
         pageState: 'onInbox',
@@ -23,7 +23,7 @@ export default class EmailsHomePage extends React.Component {
     }
 
     loadEmails = () => {
-        emailsService.getEmails(this.state.filterBy , this.state.sortBy).then(emails => {
+        emailsService.getEmails(this.state.filterBy, this.state.sortBy).then(emails => {
             this.setUread(emails)
             this.setPrecentageUnread(emails)
             this.setState({ emails })
@@ -114,15 +114,27 @@ export default class EmailsHomePage extends React.Component {
                     setPrecentageUnread={this.setPrecentageUnread}
                     setUread={this.setUread}
                     onFilter={this.onFilter}
-                    onSort={this.onSort} />
+                    onSort={this.onSort}
+                    sortBy={this.state.sortBy} />
                 : (this.state.navState === 'onCompose') ?
                     <ComposeEmail /> :
                     (this.state.navState === 'onSent') ?
-                        <SentMails /> :
+                        <SentMails emails={this.props.emails} /> :
                         (this.state.navState === 'onStarred') ?
-                            <StarredMails emails={this.state.emails}/> : ''
+                            <StarredMails selectedEmail={this.state.selectedEmail}
+                                deleteMail={this.onDeleteMail}
+                                emails={this.state.emails}
+                                onSelectEmail={this.onSelectEmail}
+                                onUnSelectEmail={this.onUnSelectEmail}
+                                updateUnreaded={this.onUpdateUnreaded}
+                                onSetPage={this.onSetPage}
+                                setPrecentageUnread={this.setPrecentageUnread}
+                                setUread={this.setUread}
+                                onFilter={this.onFilter}
+                                onSort={this.onSort}
+                                sortBy={this.state.sortBy}
+                            /> : ''
             }
-
         </div>
     }
 }

@@ -3,15 +3,17 @@
 @import './notes-app.css';
 
 
-.main-nav{
+.main-nav {
     padding: 5px 20px;
     display: flex;
-    background-color: rgb(255, 145, 0);
+    background-color: rgb(255, 172, 46);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 50px;
 }
 
-.ul-main-nav{
+.ul-main-nav {
     width: 30px;
-    height: 30px;
     list-style: none;
     display: flex;
     width: 20%;
@@ -19,48 +21,74 @@
     align-items: center;
 }
 
+.ul-main-nav li {
+    padding: 0px 2px;
+}
+
 /* helpers */
 
-.fill{
+.fill {
     width: 100%;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.column{
+.column {
     flex-direction: column;
 }
 
-.space-around{
+.space-around {
     justify-content: space-around;
 }
 
-.space-between{
+.space-between {
     justify-content: space-between;
 }
 
-.justify-center{
+.flex1 {
+    flex-grow: 1;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.justify-center {
     justify-content: center;
 }
-.align-center{
+
+.align-center {
     align-items: center;
 }
-.aling-flex-end{
+
+.aling-flex-end {
     align-items: flex-end;
-    
 }
+
+.text-center {
+    text-align: center;
+}
+
 .content {
     justify-content: center;
 }
-.direction-column{
+
+.direction-column {
     flex-direction: column;
 }
 
+.align-end {
+    align-items: flex-end;
+}
 
 /* cancel scroll */
-html, body {margin: 0; height: 100%; overflow: hidden}
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
 
 /* Helpers */
 
@@ -74,4 +102,3 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     margin: 0;
     padding: 0;
 }
-
