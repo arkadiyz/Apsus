@@ -6,14 +6,9 @@ export default class ComposeEmail extends React.Component {
 
     state = {
         sentEmailId: '',
-        sendTo: '',
         sentDate: '',
         subject: '',
         bodyText: ''
-    }
-
-    componentDidMount() {
-        this.setFormDataForEdit();
     }
 
     componentDidUpdate(prevProps) {
@@ -31,13 +26,13 @@ export default class ComposeEmail extends React.Component {
 
     onSend = (ev) => {
         ev.preventDefault();
-        if (this.state.sendTo && this.state.subject && this.state.bodyText) {
+        if ((this.state.sendTo) && (this.state.subject) && (this.state.bodyText)) {
             this.setState({
                 sentEmailId: getRandomID(),
-                sendTo: this.state.sendTo,
+                sentTo: this.state.sentTo,
                 subjuect: this.state.subjuect,
                 bodyText: this.state.bodyText,
-                sentDate: ( new Date() ).toLocaleDateString()
+                sentDate: (new Date()).toLocaleDateString()
             }, () => {
                 let sentMails = storageService.load('sentMails')
                 if (!sentMails) {
@@ -57,25 +52,26 @@ export default class ComposeEmail extends React.Component {
     }
 
     render() {
-        return <div className="send-email-container-wrapper fill flex justify-center">
-            <div className="send-email-container fill">
-                <h3 className="header-new-email">new messege</h3>
+        return <div className="send-email-container-wrapper fill flex column justify-center">
+            <h3 className="header-new-email flex align-center justify-center">new messege</h3>
+            <div className="send-email-container">
                 <div className="send-email-container-user-info flex column">
                     <input className="send-mail-send-to" type="text" placeholder="to.." name="sendTo"
-                        onChange={this.inputChange} defaultValue={this.state.sendTo} required></input>
+                        onChange={this.inputChange} defaultValue={this.state.sentTo} required></input>
                     <input className="send-mail-subject" type="text" placeholder="subject" name="subject"
                         onChange={this.inputChange} defaultValue={this.state.subject} required></input>
                 </div>
-                <textarea className="send-mail-body-text" rows="10" cols="60" name="bodyText"
-                    onChange={this.inputChange} defaultValue={this.state.bodyText} required></textarea>
 
-                <div className="send-email-container-send-btn flex space-between">
-                    <button type="submit" onClick={this.onSend}>send</button>
-                    <div className="deleteSendMail-btn">
-                        <i className="fas fa-trash"></i>
-                    </div>
+                <div className="send-mail-textarea-btns flex column align-end">
+                    <textarea className="send-mail-body-text" rows="10" cols="60" name="bodyText"
+                        onChange={this.inputChange} defaultValue={this.state.bodyText} required></textarea>
                 </div>
+                <div className="fill flex justify-center">
+                    <button className="send-mail-btn" type="submit" onClick={this.onSend}>send</button>
+                </div>
+                <div className="delete-send-mail-btn"><i className="fas fa-trash"></i></div>
             </div>
+            <div className="footer-new-email flex"></div>
         </div>
     }
 }

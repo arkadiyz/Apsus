@@ -10,6 +10,7 @@ export default class Email {
             this.bodyText = bodyText,
             this.isRead = false,
             this.isStarred = false,
-            this.sentAt = sentAt
+            this.sentAt = sentAt,
+            this.sentAtStr = sentAt.toString().substr(7,17)
     }
 }

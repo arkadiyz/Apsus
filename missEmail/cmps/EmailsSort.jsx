@@ -2,14 +2,36 @@
 export default class EmailsSort extends React.Component {
 
     state = {
-        sortBy:''
+        sortBy: 'newer'
+    }
+    
+    onSortBy = (event) => {
+        if (event.target.textContent === 'newer/older') {
+            if (this.props.sortBy === 'subject') {
+                this.setState({ sortBy: 'newer' }, () => {
+                    this.props.onSort(this.state.sortBy)
+                });
+            } else {
+                if (this.state.sortBy === 'newer') {
+                    this.setState({ sortBy: 'older' }, () => {
+                        this.props.onSort(this.state.sortBy)
+                    });
+                }
+                else (this.setState({ sortBy: 'newer' }, () => {
+                    this.props.onSort(this.state.sortBy)
+                }))
+            }
+        } else {
+            this.setState({sortBy:'subject'} , () => {
+                this.props.onSort(this.state.sortBy)
+            })
+        }
     }
 
-    render(){
+    render() {
         return <div className="emails-sort-container flex">
-            <p>SORT BY:</p>
-            <button>subject</button>
-            <button>date</button>
+            <button onClick={this.onSortBy}>subject</button>
+            <button onClick={this.onSortBy}>newer/older</button>
         </div>
     }
 

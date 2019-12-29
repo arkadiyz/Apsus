@@ -32,7 +32,7 @@ export default class EmailsFilter extends React.Component {
 
     render() {
         return <div className="search-container flex justify-center">
-            <form action="" onChange={this.handleInput}>
+            <form className="flex wrap align-center" action="" onChange={this.handleInput}>
 
                 <input type='text' name="name" placeholder="search by name"
                     className='search-emails'
