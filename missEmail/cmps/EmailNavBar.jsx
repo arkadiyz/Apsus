@@ -63,6 +63,8 @@ export default class EmailNavBar extends React.Component {
         this.setState({ precentageUnread: this.props.precentage })
     }
     onSetNavState = (navState) => {
+        
+        this.props.onUnSelectEmail();
         this.setState({ navState }, () => this.loadNavState())
     }
 
