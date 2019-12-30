@@ -15,7 +15,8 @@ export default class EmailNavBar extends React.Component {
         this.setPrecentageUnread()
     }
 
-    loadNavState = () => {
+    loadNavState = () => 
+    {
         if (this.state.navState === 'onInbox' && this.props.pageState === 'Email opened') this.props.onUnSelectEmail()
         this.setState({ navState: this.props.navState }, () => {
             switch (this.state.navState) {
@@ -75,14 +76,14 @@ export default class EmailNavBar extends React.Component {
         if (this.state.isNavOpen) {
             newClassName = "openNav email-nav-container flex column align-center"
         } else newClassName = "email-nav-container flex column align-center"
-        
+
         return <div className=" flex column align-center ">
             <i onClick={this.openNav} className="hamb-menu-nav fas fa-bars"></i>
             <div className={newClassName} >
                 <p onClick={() => this.props.onSetNavState('onCompose')} className="fill hamb-item compose-btn"><span className="compose-btn-plus">+</span>COMPOSE</p>
                 <div className="emails-nav-container-options">
 
-                    {(this.state.onInbox) ?
+                    {(this.state.onInbox ) ?
                         <div onClick={() => this.props.onSetNavState('onInbox', this.onSetNavState('onInbox'))} className="styleForEmailsNavBar hamb-item  emails-nav-option flex align-center">
                             <p>inbox</p>
                             <p className="unreaded">({this.props.unReadedCount})</p>

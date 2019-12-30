@@ -7,19 +7,19 @@ export default class NotesHomePage extends React.Component {
     state = {
         notes: [],
         selectedNote: null,
-        colorList:null,
-        filterBy:null
+        colorList: null,
+        filterBy: null
     }
 
     componentDidMount = () => {
-            this.loadNotes();
+        this.loadNotes();
     }
 
     loadNotes = () => {
-        console.log('this.state.filterBy',this.state.filterBy);
-        
+        console.log('this.state.filterBy', this.state.filterBy);
+
         NotesService.getNotes(this.state.filterBy).then(notes => {
-            
+
             this.setState({ notes })
         })
     }
@@ -38,88 +38,90 @@ export default class NotesHomePage extends React.Component {
     }
 
     onDeleteNote = (id) => {
-        
+
         NotesService.deleteNote(id).then((isTrue) => {
             console.log(isTrue);
             this.loadNotes();
         })
-        
+
     }
-    
-    changeInput = (newInput,id) => {
-        
+
+    changeInput = (newInput, id) => {
+
         // console.log('New Input in DynamicComponen ',newInput);
-        this.props.onChange(newInput,id)
+        this.props.onChange(newInput, id)
         this.setState()
     }
 
-    changeInput = (newInput,id) => {
+    changeInput = (newInput, id) => {
         console.log(newInput);
-        
-        NotesService.editNoteTxt(newInput,id)
+
+        NotesService.editNoteTxt(newInput, id)
     }
 
 
-    
-    onChangeColor = (backgroundColor,id) => { 
 
-        NotesService.setColorNote(backgroundColor,id).then(()=>{
+    onChangeColor = (backgroundColor, id) => {
+
+        NotesService.setColorNote(backgroundColor, id).then(() => {
             this.loadNotes()
         })
 
     }
 
-    addTodo=(id,todos)=>{
-        
-        NotesService.addTodo(id,todos).then(()=>{
+    addTodo = (id, todos) => {
+
+        NotesService.addTodo(id, todos).then(() => {
             this.loadNotes()
         })
-        
+
     }
 
-    selectTodo = (noteId,todoId) => { 
-        console.log('noteId, todoId',noteId, todoId);
-        
-        NotesService.changeSelected(noteId,todoId).then(()=>{
-            this.loadNotes()
-            
-        })        
-    }
+    selectTodo = (noteId, todoId) => {
+        console.log('noteId, todoId', noteId, todoId);
 
-    changeInputTodo = (input,noteId,todoId) => {
-        
-        NotesService.changeInputTodo(input,noteId,todoId).then(()=>{
+        NotesService.changeSelected(noteId, todoId).then(() => {
             this.loadNotes()
+
         })
     }
 
-    pinNote =(noteId)=>{
-        
-        NotesService.changeLocationNotes(noteId).then(()=>{
+    changeInputTodo = (input, noteId, todoId) => {
+
+        NotesService.changeInputTodo(input, noteId, todoId).then(() => {
             this.loadNotes()
         })
-        
     }
 
-    searchNotes=(ev)=>{
+    pinNote = (noteId) => {
+
+        NotesService.changeLocationNotes(noteId).then(() => {
+            this.loadNotes()
+        })
+
+    }
+
+    searchNotes = (ev) => {
         console.log(ev.target.value);
         const field = ev.target.name;
-        const value = ev.target.value 
-        console.log('value',value);
-        
-        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),this.loadNotes)
-        
+        const value = ev.target.value
+        console.log('value', value);
+
+        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }), this.loadNotes)
+
     }
     render() {
-        
-        return <React.Fragment>
-            <NotesNavBar notes={this.state.notes} onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
-            <input name="name" className="nav-bar-notes" type="text" onChange ={this.searchNotes}placeholder="Search"></input>
 
-            <NotesList notes={this.state.notes}  changeInput={this.changeInput} onChangeColor={this.onChangeColor} 
-             onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo} 
-             changeInputTodo={this.changeInputTodo} pinNote={this.pinNote}/>
-        </React.Fragment>
+        return <div className="notes-app-main fill flex column justify-center ">
+            <React.Fragment>
+                <NotesNavBar notes={this.state.notes} onAddNewNotes={this.onAddNewNotes}></NotesNavBar>
+                <input name="name" className="nav-bar-notes" type="text" onChange={this.searchNotes} placeholder="Search"></input>
+
+                <NotesList notes={this.state.notes} changeInput={this.changeInput} onChangeColor={this.onChangeColor}
+                    onDeleteNote={this.onDeleteNote} addTodo={this.addTodo} selectTodo={this.selectTodo}
+                    changeInputTodo={this.changeInputTodo} pinNote={this.pinNote} />
+            </React.Fragment>
+        </div>
     }
 }
 

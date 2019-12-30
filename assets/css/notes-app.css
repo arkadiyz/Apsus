@@ -14,10 +14,14 @@ background-color: #fff;
 }
 
 body {
-    overflow-x: hidden;
-    
+    overflow-x: hidden;   
 }
 
+.notes-app-main{
+background-image: url('../img/notes-bg.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
 
 .nav-bar-notes {
     width: 470px;
