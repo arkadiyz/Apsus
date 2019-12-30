@@ -117,7 +117,10 @@ export default class EmailsHomePage extends React.Component {
                     onSort={this.onSort}
                     sortBy={this.state.sortBy} />
                 : (this.state.navState === 'onCompose') ?
-                    <ComposeEmail /> :
+                    <ComposeEmail  email={this.state.selectedEmail}
+                     onUnSelectEmail={this.onUnSelectEmail}
+                        onSetNavState={this.onSetNavState}
+                    /> :
                     (this.state.navState === 'onSent') ?
                         <SentMails emails={this.props.emails} /> :
                         (this.state.navState === 'onStarred') ?

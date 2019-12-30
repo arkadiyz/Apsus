@@ -1,5 +1,3 @@
-
-
 export default class EmailsFilter extends React.Component {
     state = {
         filterBy: {

@@ -41,6 +41,7 @@ export default class ComposeEmail extends React.Component {
                 sentEmailId: getRandomID(),
                 name: this.state.name,
                 sendTo: this.state.sendTo,
+                subject:'none',
                 bodyText: this.state.bodyText,
                 isEdit: false,
                 sentDate: (new Date()).toLocaleDateString()

@@ -27,24 +27,26 @@ export default class ComposeEmail extends React.Component {
     onSend = (ev) => {
         ev.preventDefault();
         if ((this.state.sendTo) && (this.state.subject) && (this.state.bodyText)) {
-            this.setState({
+            let newSentEmail = {
                 sentEmailId: getRandomID(),
+                name:'you',
                 sentTo: this.state.sentTo,
-                subjuect: this.state.subjuect,
+                subject: this.state.subject,
                 bodyText: this.state.bodyText,
                 sentDate: (new Date()).toLocaleDateString()
-            }, () => {
-                let sentMails = storageService.load('sentMails')
-                if (!sentMails) {
-                    sentMails = [];
-                    sentMails.push(this.state)
-                } else {
-                    sentMails.push(this.state)
-                }
-                storageService.store('sentMails', sentMails)
-            })
+            }
+            let sentMails = storageService.load('sentMails')
+            if (!sentMails) {
+                sentMails = [];
+                sentMails.push(newSentEmail)
+            } else {
+                sentMails.push(newSentEmail)
+            }
+            storageService.store('sentMails', sentMails)
+            this.props.onSetNavState('onInbox')
         }
     }
+
 
     inputChange = (ev) => {
         let fieldName = ev.target.name
