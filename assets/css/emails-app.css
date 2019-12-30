@@ -601,12 +601,9 @@ input {
         border-bottom-color: #a5a5a56b;
     }
 
-<<<<<<< HEAD
-=======
     .emails-list-sort-filter-container {
         flex-wrap: wrap;
     }
->>>>>>> f5333bfca231cc8077e5a468db372479dc03bb8a
     .emails-sort-container {
         padding-bottom: 3px;
     }

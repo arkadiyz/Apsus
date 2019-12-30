@@ -50,8 +50,8 @@ export default class EmailPreview extends React.Component {
         if (email.isRead) newclassName += " readedStyle"
 
         return (
-            <div className={newclassName}>
-                <div className="user-data fill flex space-between align-center" onClick={this.handleClick} >
+            <div className={newclassName} onClick={this.handleClick} >
+                <div className="user-data fill flex space-between align-center">
                     <p className="userame flex align-center"><small>from:</small>{email.name}</p>
                     <p className="sendAt flex align-center"><small>at:</small>{email.sentAtStr}</p>
                 </div>

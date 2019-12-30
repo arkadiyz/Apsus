@@ -21,13 +21,7 @@ body {
 
 .nav-bar-notes {
     width: 470px;
-<<<<<<< HEAD
-    text-shadow: none;
-
-    height: 30px;
-=======
     height: 45px;
->>>>>>> f5333bfca231cc8077e5a468db372479dc03bb8a
     background-color: rgb(112, 111, 111);
     padding: 3px;
     margin: 15px auto;

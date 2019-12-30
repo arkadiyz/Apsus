@@ -17,9 +17,9 @@ export default class InputSearch extends React.Component {
             <img src="../assets/img/logo.png" />
             <ul className={newClassName}>
                 <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/' exact>Home</NavLink></li>
-                <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/emailshomepage'>Email</NavLink></li>
-                <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/noteshomepage'>Nodes</NavLink></li>
-                <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/about' exact>About</NavLink></li>
+                <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/emailshomepage'>Emails App</NavLink></li>
+                <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/noteshomepage'>Notes App</NavLink></li>
+                <li className="flex align-center justify-center li-main-nav" ><NavLink className="fill" activeClassName="active" to='/bookshomepage' exact>Books App</NavLink></li>
             </ul>
             <i onClick={this.openMoreApps} className="more-apps-icon fas fa-chevron-circle-down"></i>
         </nav>
