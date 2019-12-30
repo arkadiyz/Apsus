@@ -27,8 +27,10 @@ export default class SentMails extends React.Component {
                         return <div key={index} className="sent-mail-container flex column align-center">
                             <div className="user-info-sent-mail fill flex space-between">
                                 <div className="flex align-center">
-                                    <small>from:</small><p>{mail.name}</p>
+                                    <small>sent to:</small><p>{mail.name}</p>
+                                    <small className="padding-left5px">from:</small><p>you</p>
                                 </div>
+                                
                                 <div className="flex align-center">
                                     <small>at:</small><p>{mail.sentDate}</p>
                                 </div>

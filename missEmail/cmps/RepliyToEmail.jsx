@@ -29,17 +29,18 @@ export default class ComposeEmail extends React.Component {
             this.setState({
                 sentEmailId: getRandomID(),
                 sendTo: email.id,
-                name: email.name
+                sendToName: email.name
             })
         }
     }
 
     onSend = (ev) => {
+        debugger
         ev.preventDefault();
         if (this.state.sendTo && this.state.bodyText) {
             let newRepliy = {
                 sentEmailId: getRandomID(),
-                name: this.state.name,
+                sendToName:this.state.name,
                 sendTo: this.state.sendTo,
                 subject:'none',
                 bodyText: this.state.bodyText,

@@ -113,6 +113,11 @@ input {
     transition: 0.5s;
 }
 
+input{
+    color: black;
+    text-shadow: none;
+}
+
 .emails-sort-container button:hover, .emails-nav-option:hover, select:hover, .email-card:hover {
     box-shadow: 0 0 8px rgba(252, 252, 252, 0.5);
     color: rgba(248, 183, 86, 0.774);
@@ -312,6 +317,7 @@ input {
 
 .send-email-container-user-info input {
     height: 40px;
+    color: black;
     background: white;
     margin: 10px;
     font-size: 1.3rem;
